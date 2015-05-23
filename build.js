@@ -2,7 +2,6 @@
 
 var metalsmith = require('metalsmith');
 var autoprefixer = require('metalsmith-autoprefixer');
-var gzip = require('metalsmith-gzip');
 var fingerprint = require('metalsmith-fingerprint');
 var jade = require('metalsmith-jade');
 var sass = require('metalsmith-sass');
@@ -40,13 +39,6 @@ m.use(jade({
   useMetadata: true,
   locals: jadeHelper(m)
 }));
-
-if (production) {
-  m.use(gzip({
-    src: '**/*.{css,svg}',
-    overwrite: true
-  }));
-}
 
 m.build(function (err) {
   if (err) {
