@@ -1,5 +1,6 @@
 {
-  "host": "http://sparks-inc.org",
+  "env": "development",
+  "host": "http://localhost:8080",
   "facebook": {
     "site": "coopsparks"
   },

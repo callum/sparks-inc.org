@@ -8,14 +8,17 @@ var sass = require('metalsmith-sass');
 var patterns = require('css-patterns');
 var config = require('./lib/plugins/config');
 var meta = require('./lib/plugins/meta');
+var robots = require('./lib/plugins/robots');
 var jadeHelper = require('./lib/helpers/jade');
 var sassHelper = require('./lib/helpers/sass');
 
-var production = process.env.NODE_ENV === 'production';
+var production =
+  process.env.NODE_ENV === 'staging' ||
+  process.env.NODE_ENV === 'production';
 
 var m = metalsmith(__dirname);
 
-m.use(config());
+m.use(config(process.env.NODE_ENV));
 
 if (production) {
   m.use(fingerprint({ pattern: 'img/**/*' }));
@@ -39,6 +42,8 @@ m.use(jade({
   useMetadata: true,
   locals: jadeHelper(m)
 }));
+
+m.use(robots());
 
 m.build(function (err) {
   if (err) {

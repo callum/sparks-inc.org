@@ -1,0 +1,4 @@
+{
+  "env": "staging",
+  "host": "http://staging.sparks-inc.org"
+}
