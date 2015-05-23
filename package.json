@@ -1,0 +1,18 @@
+{
+  "name": "sparks",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "css-patterns": "^0.2.0",
+    "jade": "^1.9.2",
+    "metalsmith": "^1.7.0",
+    "metalsmith-autoprefixer": "^1.0.2",
+    "metalsmith-fingerprint": "callum/metalsmith-fingerprint",
+    "metalsmith-gzip": "^1.1.0",
+    "metalsmith-jade": "^2.0.0",
+    "metalsmith-sass": "callum/metalsmith-sass",
+    "metalsmith-templates": "^0.7.0",
+    "node-sass": "^3.1.2"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "host": "http://sparks-inc.org",
+  "facebook": {
+    "site": "coopsparks"
+  },
+  "twitter": {
+    "site": "@coopsparks"
+  },
+  "meta": {
+    "title": "Sparks Play & Care",
+    "description": "Sparks Play & Care is where kids come to play",
+    "keywords": [
+      "childcare",
+      "after school",
+      "sefton park",
+      "club"
+    ]
+  }
+}

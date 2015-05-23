@@ -1,0 +1,12 @@
+doctype html
+html(lang='en')
+  head
+    include partials/meta.jade
+    link(rel='stylesheet' href=assetUrl('css/index.css'))
+  body
+    header
+      h1= meta.title
+    main
+      block content
+    footer
+      p #{meta.title} 2015
