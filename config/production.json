@@ -1,4 +1,4 @@
 {
   "env": "production",
-  "host": "http://sparks-inc.org"
+  "host": "http://production.sparks-inc.org"
 }
