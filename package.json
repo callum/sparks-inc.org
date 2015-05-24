@@ -14,6 +14,7 @@
     "metalsmith": "^1.7.0",
     "metalsmith-autoprefixer": "^1.0.2",
     "metalsmith-fingerprint": "callum/metalsmith-fingerprint",
+    "metalsmith-ignore": "^0.1.2",
     "metalsmith-jade": "^2.0.0",
     "metalsmith-sass": "callum/metalsmith-sass",
     "metalsmith-serve": "0.0.3",

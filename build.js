@@ -3,6 +3,7 @@
 var metalsmith = require('metalsmith');
 var autoprefixer = require('metalsmith-autoprefixer');
 var fingerprint = require('metalsmith-fingerprint');
+var ignore = require('metalsmith-ignore');
 var jade = require('metalsmith-jade');
 var sass = require('metalsmith-sass');
 var serve = require('metalsmith-serve');
@@ -22,6 +23,10 @@ var production =
   process.env.NODE_ENV === 'production';
 
 m.use(config(process.env.NODE_ENV, watchmode));
+m.use(ignore([
+  'layouts/**/*',
+  'partials/**/*'
+]));
 
 if (production) {
   m.use(fingerprint({ pattern: 'img/**/*' }));
