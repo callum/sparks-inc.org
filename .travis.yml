@@ -9,3 +9,5 @@ deploy:
   bucket: org.sparks-inc.staging
   acl: public_read
   local_dir: build
+  on:
+    branch: ci
