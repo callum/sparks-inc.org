@@ -55,13 +55,14 @@ m.use(robots());
 if (watchmode) {
   m.use(watch({
     paths: {
-      'src/**/*': true,
       'config/**/*': '**/*',
-      'templates/**/*': '**/*.jade'
+      'src/**/*': true,
+      'src/layouts/**/*': '**/*.jade',
+      'src/partials/**/*': '**/*.jade'
     },
     livereload: true
   }));
-  m.use(serve());
+  m.use(serve({ port: process.env.PORT }));
 }
 
 m.build(function (err) {
