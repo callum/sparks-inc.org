@@ -1,5 +1,5 @@
 # sparks-inc.org
 
 ```
-npm run build
+npm start
 ```
