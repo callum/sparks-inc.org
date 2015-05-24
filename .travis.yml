@@ -8,6 +8,6 @@ deploy:
     secure: XUnNqn4rMvjW81xi4aaWFfEKRju61ZXFfVTTrA0se3PwN4bu560tpic1jBaM2jgHPJOQ0G3W2OPr4R8126s+3aSQlPMnxmUW5rDyTMHYT9svSSx/Ixfe6yQCweYLAtwdS+cgLmzSXYv9E6eDB5yi7alPbeA/AiZtKV3OcKQLbkAUG/wsa09QDHY7z0KJwGHbTE/1lnHwmpfxvmZ/NiLNxIroQ0CuU0iQ/kHwOs7e8dwQ3xGyEz1BFxK0qyZt0nR7pC9Jo+IU76Fln/5Ci3ueTl2cJG+fEMuEqIxIcz2D7kJ5BFIVkGJryS4J41OfmGCfYSVmVjOiV1fuCX84+V0HeUPoXnBXlwv96kbYMJn+rGX5K8K4HilZIWA6aro3yAC9dLrR3l3/zNTV0yzeUlMHfmmJ5m+6+5701TdBpkeSL652pLmyfHSLG3GuC8yqjWWJBKooytELAyAnY+jK0ISe2j8O5thAwQX0+dk3ZXFn7BwfPnzRCdj1kDuDdMCISMjXLU/ExyqQiI3zfRNt0FsPV4YcqeUbPrusTN74UkMzUgkHFiUyFPS5Jpki4OgtYNi19H7hcxdvbt8mgsZ0No8DZHn+rXqO7waOp331PDRFVLgfbPQowjAkR9NC8SWca+FCmcc3Lr2cX4YeETCLfCa5lSdtaayglzszRXwYLDeseMA=
   bucket: org.sparks-inc.staging
   acl: public_read
-  local_dir: build
+  local_dir: ./build
   on:
     branch: ci
