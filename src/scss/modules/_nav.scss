@@ -1,0 +1,70 @@
+.nav {
+  color: white;
+
+  &:not(.is-open) {
+    @include visually-hidden;
+  }
+
+  &.is-open {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: map-get($colors, nav);
+  }
+}
+
+.nav__container {
+  @include container;
+}
+
+%nav__items {
+  @include unstyled-list;
+}
+
+%nav__item {
+  &:not(:first-child) {
+    margin-top: 8px;
+  }
+}
+
+%nav__link {
+  @include unstyled-anchor;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}
+
+.nav__items {
+  @extend %nav__items;
+}
+
+.nav__item {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.nav__link {
+  @extend %nav__link;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.nav__sub-items {
+  @extend %nav__items;
+  margin-top: 8px;
+}
+
+.nav__sub-item {
+  @extend %nav__item;
+}
+
+.nav__sub-link {
+  @extend %nav__link;
+  color: adjust-color(map-get($colors, nav), $saturation: -60%, $lightness: 60%);
+}

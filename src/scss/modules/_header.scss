@@ -1,0 +1,31 @@
+.header {
+  background: map-get($colors, header);
+  color: white;
+}
+
+.header__container {
+  @include container;
+  @include clearfix;
+}
+
+.header__logo {
+  display: block;
+  float: left;
+}
+
+.header__logo-image {
+  display: block;
+  width: 90px;
+  height: 93px;
+}
+
+.header__nav-toggle {
+  @include unstyled-input;
+  display: block;
+  position: relative;
+  z-index: 1;
+  float: right;
+  font-family: 'Playtime With Hot Toddies', sans-serif;
+  font-size: 24px;
+  color: inherit;
+}

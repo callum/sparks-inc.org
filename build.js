@@ -57,6 +57,7 @@ if (watchmode) {
     paths: {
       'config/**/*': '**/*',
       'src/**/*': true,
+      'src/scss/**/*': '**/*.scss',
       'src/layouts/**/*': '**/*.jade',
       'src/partials/**/*': '**/*.jade'
     },

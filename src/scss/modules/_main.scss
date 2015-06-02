@@ -1,0 +1,7 @@
+.main {
+  background-color: white;
+}
+
+.main__container {
+  @include container;
+}

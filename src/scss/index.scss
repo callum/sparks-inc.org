@@ -1,5 +1,7 @@
 @import 'patterns';
 
-body {
-  margin: 0;
-}
+@import 'base/variables';
+@import 'base/defaults';
+
+@import 'patterns/index';
+@import 'modules/index';

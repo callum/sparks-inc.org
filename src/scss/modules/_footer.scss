@@ -1,0 +1,143 @@
+.footer {
+  color: white;
+}
+
+%footer__big-link {
+  @include unstyled-anchor;
+  font-size: 18px;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}
+
+.footer__container {
+  @include container;
+}
+
+.footer__organisation {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 3px solid lighten(map-get($colors, footer), 5%);
+}
+
+.footer__heading {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: map-get($colors, header);
+}
+
+.footer__networks {
+  @include clearfix;
+}
+
+.footer__network {
+  float: left;
+  width: 50%;
+  line-height: 28px;
+}
+
+.footer__network-link {
+  @extend %footer__big-link;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+}
+
+.footer__network-link--facebook {
+  &:before {
+    background-image: url('/images/facebook.svg');
+  }
+}
+
+.footer__network-link--twitter {
+  &:before {
+    background-image: url('/images/twitter.svg');
+  }
+}
+
+.footer__useful-links {
+  @include clearfix;
+  margin-top: 20px;
+}
+
+.footer__items {
+  @include unstyled-list;
+  float: left;
+  width: 50%;
+}
+
+.footer__items--main {
+  padding-right: 8px;
+}
+
+.footer__items--auxilliary {
+  padding-left: 8px;
+}
+
+.footer__item {
+  &:not(:first-child) {
+    margin-top: 8px;
+  }
+}
+
+.footer__link {
+  @include unstyled-anchor;
+  font-size: 15px;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}
+
+.footer__contact {
+  &:not(:first-child) {
+    margin-top: 8px;
+  }
+}
+
+.footer__contact-link {
+  @extend %footer__big-link;
+}
+
+.footer__location {
+  @include visually-hidden;
+}
+
+.footer__legal {
+  margin-top: 20px;
+}
+
+.footer__copyright,
+.footer__company {
+  font-size: 15px;
+  color: adjust-color(map-get($colors, footer), $saturation: -60%, $lightness: 60%);
+
+  &:not(:first-child) {
+    margin-top: 8px;
+  }
+}
+
+.footer__assurance {
+  margin-top: 20px;
+}
+
+.footer__ofsted {
+  display: block;
+  width: 80px;
+  margin: auto;
+}
+
+.footer__ofsted-image {
+  display: block;
+  width: 100%;
+}
