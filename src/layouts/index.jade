@@ -4,11 +4,15 @@ html(lang='en')
     include ../partials/meta
     link(rel='stylesheet' href=assetUrl('css/index.css'))
   body
-    header
-      h1= meta.title
-    main
-      block content
-    footer
-      p #{meta.title} 2015
+    include ../partials/header
+    main.main
+      main.main__container
+        block content
+    include ../partials/footer
+    script.
+      var nav = document.querySelector('.js-nav');
+      document.querySelector('.js-nav-toggle').addEventListener('click', function() {
+        nav.classList.toggle('is-open');
+      });
     if watchmode
       script(src='http://localhost:35729/livereload.js')
