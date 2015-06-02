@@ -1,4 +1,7 @@
 .footer {
+  background-color: map-get($colors, footer);
+  mask: url(/images/wave-top.svg) no-repeat center top;
+  mask-size: 100% auto;
   color: white;
 }
 
@@ -17,8 +20,16 @@
 
 .footer__organisation {
   margin-top: 20px;
-  padding-top: 20px;
-  border-top: 3px solid lighten(map-get($colors, footer), 5%);
+
+  &:before {
+    content: '';
+    display: block;
+    mask: url(/images/border.svg) no-repeat center top;
+    mask-size: 100% 100%;
+    height: 6px;
+    margin-bottom: 20px;
+    background: lighten(map-get($colors, footer), 5%);
+  }
 }
 
 .footer__heading {
@@ -107,6 +118,37 @@
 
 .footer__contact-link {
   @extend %footer__big-link;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 26px;
+    height: 22px;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+.footer__contact-link--phone {
+  &:before {
+    position: relative;
+    top: -1px;
+    background-image: url(/images/phone.svg);
+  }
+}
+
+.footer__contact-link--email {
+  &:before {
+    background-image: url(/images/email.svg);
+  }
+}
+
+.footer__contact-link--map {
+  &:before {
+    background-image: url(/images/location.svg);
+  }
 }
 
 .footer__location {
@@ -134,7 +176,7 @@
 .footer__ofsted {
   display: block;
   width: 80px;
-  margin: auto;
+  margin-left: auto;
 }
 
 .footer__ofsted-image {

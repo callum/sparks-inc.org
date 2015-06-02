@@ -1,5 +1,7 @@
 .header {
   background: map-get($colors, header);
+  mask: url(/images/wave-bottom.svg) no-repeat center bottom;
+  mask-size: 100% auto;
   color: white;
 }
 
@@ -23,9 +25,21 @@
   @include unstyled-input;
   display: block;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   float: right;
   font-family: 'Playtime With Hot Toddies', sans-serif;
   font-size: 24px;
   color: inherit;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+    width: 22px;
+    height: 17px;
+    margin-right: 10px;
+    background-image: url(/images/menu.svg);
+  }
 }

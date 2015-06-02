@@ -1,4 +1,5 @@
 .nav {
+  padding-top: 50px;
   color: white;
 
   &:not(.is-open) {
@@ -7,6 +8,7 @@
 
   &.is-open {
     position: fixed;
+    z-index: 1;
     top: 0;
     right: 0;
     bottom: 0;
@@ -66,5 +68,5 @@
 
 .nav__sub-link {
   @extend %nav__link;
-  color: adjust-color(map-get($colors, nav), $saturation: -60%, $lightness: 60%);
+  color: adjust-color(map-get($colors, nav), $saturation: -65%, $lightness: 75%);
 }
