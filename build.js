@@ -35,6 +35,9 @@ if (production) {
 m.use(sass({
   outputDir: 'css',
   outputStyle: production ? 'compact' : 'expanded',
+  sourceMap: !production,
+  sourceMapContents: !production,
+  sourceMapEmbed: !production,
   includePaths: patterns.includePaths,
   functions: sassHelper(m)
 }));
