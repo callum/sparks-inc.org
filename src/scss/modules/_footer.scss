@@ -5,7 +5,7 @@
   color: white;
 }
 
-%footer__big-link {
+%footer__primary-link {
   @include unstyled-anchor;
   font-size: 18px;
 
@@ -34,7 +34,7 @@
 
 .footer__heading {
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-size: 18px;
   color: map-get($colors, header);
 }
@@ -46,11 +46,18 @@
 .footer__network {
   float: left;
   width: 50%;
-  line-height: 28px;
+}
+
+.footer__network--facebook {
+  padding-right: 10px;
+}
+
+.footer__network--twitter {
+  padding-left: 10px;
 }
 
 .footer__network-link {
-  @extend %footer__big-link;
+  @extend %footer__primary-link;
 
   &:before {
     content: '';
@@ -62,17 +69,17 @@
     background-repeat: no-repeat;
     background-size: 100% auto;
   }
-}
 
-.footer__network-link--facebook {
-  &:before {
-    background-image: url('/images/facebook.svg');
+  .footer__network--facebook & {
+    &:before {
+      background-image: url('/images/facebook.svg');
+    }
   }
-}
 
-.footer__network-link--twitter {
-  &:before {
-    background-image: url('/images/twitter.svg');
+  .footer__network--twitter & {
+    &:before {
+      background-image: url('/images/twitter.svg');
+    }
   }
 }
 
@@ -87,17 +94,17 @@
   width: 50%;
 }
 
-.footer__items--main {
-  padding-right: 8px;
+.footer__items--primary {
+  padding-right: 10px;
 }
 
-.footer__items--auxilliary {
-  padding-left: 8px;
+.footer__items--secondary {
+  padding-left: 10px;
 }
 
 .footer__item {
   &:not(:first-child) {
-    margin-top: 8px;
+    margin-top: 10px;
   }
 }
 
@@ -117,7 +124,7 @@
 }
 
 .footer__contact-link {
-  @extend %footer__big-link;
+  @extend %footer__primary-link;
 
   &:before {
     content: '';
@@ -129,25 +136,24 @@
     background-repeat: no-repeat;
     background-position: center center;
   }
-}
 
-.footer__contact-link--phone {
-  &:before {
-    position: relative;
-    top: -1px;
-    background-image: url(/images/phone.svg);
+  .footer__contact--phone & {
+    &:before {
+      vertical-align: -4px;
+      background-image: url(/images/phone.svg);
+    }
   }
-}
 
-.footer__contact-link--email {
-  &:before {
-    background-image: url(/images/email.svg);
+  .footer__contact--email & {
+    &:before {
+      background-image: url(/images/email.svg);
+    }
   }
-}
 
-.footer__contact-link--map {
-  &:before {
-    background-image: url(/images/location.svg);
+  .footer__contact--map & {
+    &:before {
+      background-image: url(/images/location.svg);
+    }
   }
 }
 
@@ -159,18 +165,17 @@
   margin-top: 20px;
 }
 
-.footer__copyright,
-.footer__company {
+.footer__copyright, .footer__company {
   font-size: 15px;
   color: adjust-color(map-get($colors, footer), $saturation: -60%, $lightness: 60%);
+}
 
-  &:not(:first-child) {
-    margin-top: 8px;
-  }
+.footer__company {
+  margin-top: 10px;
 }
 
 .footer__assurance {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .footer__ofsted {
