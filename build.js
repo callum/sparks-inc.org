@@ -63,7 +63,10 @@ if (watchmode) {
     },
     livereload: true
   }));
-  m.use(serve({ port: process.env.PORT }));
+  m.use(serve({
+    host: '0.0.0.0',
+    port: process.env.PORT
+  }));
 }
 
 m.build(function (err) {
