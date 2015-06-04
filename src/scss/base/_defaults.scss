@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  background-color: map-get($colors, footer);
   font-family: 'Asap', sans-serif;
   text-size-adjust: 100%;
 }

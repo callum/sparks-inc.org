@@ -5,12 +5,13 @@ html(lang='en')
     link(rel='stylesheet' href='//fonts.googleapis.com/css?family=Asap:400,700|Roboto:500')
     link(rel='stylesheet' href=assetUrl('css/index.css'))
   body
-    include ../partials/header
-    include ../partials/nav
-    main.main
-      main.main__container
-        block content
-    include ../partials/footer
+    div.wrap
+      include ../partials/header
+      include ../partials/nav
+      main.main
+        main.main__container
+          block content
+      include ../partials/footer
     script.
       var nav = document.querySelector('.js-nav');
       document.querySelector('.js-nav-toggle').addEventListener('click', function() {
