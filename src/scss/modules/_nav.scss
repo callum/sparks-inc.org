@@ -1,53 +1,72 @@
 .nav {
   position: absolute;
-  z-index: 1;
   top: 0;
   right: 0;
   left: 0;
   color: white;
 
-  &.is-open {
-    position: fixed;
-    bottom: 0;
-    background-color: map-get($colors, nav);
+  @include bp-max-medium {
+    z-index: 1;
+
+    &.is-open {
+      position: fixed;
+      bottom: 0;
+      background-color: map-get($colors, nav);
+    }
   }
 }
 
 .nav__header {
-  .nav.is-open & {
-    background: darken(map-get($colors, nav), 3%);
-    mask: url(/images/wave-bottom.svg) no-repeat center bottom;
-    mask-size: 100% auto;
+  @include bp-max-medium {
+    .nav.is-open & {
+      background: darken(map-get($colors, nav), 3%);
+      mask: url(/images/wave-bottom.svg) no-repeat center bottom;
+      mask-size: 100% auto;
+    }
+  }
+
+  @include bp-min-medium {
+    display: none;
   }
 }
 
 .nav__main {
-  .nav:not(.is-open) & {
-    @include visually-hidden;
+  @include bp-max-medium {
+    .nav:not(.is-open) & {
+      @include visually-hidden;
+    }
   }
 }
 
 .nav__container {
   @include container;
+
+  @include bp-min-medium {
+    @include container--medium;
+    height: 200px;
+    padding-bottom: 40px;
+  }
 }
 
 .nav__toggle {
-  @include unstyled-input;
-  display: block;
-  margin-left: auto;
-  font: 24px 'Playtime With Hot Toddies', sans-serif;
-  color: inherit;
+  @include bp-max-medium {
+    @include unstyled-input;
+    display: block;
+    margin-left: auto;
+    font: 24px 'Playtime With Hot Toddies', sans-serif;
+    color: inherit;
 
-  &:before {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    top: -2px;
-    width: 22px;
-    height: 17px;
-    margin-right: 10px;
-    background-image: url(/images/menu.svg);
+    &::before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      top: -2px;
+      width: 22px;
+      height: 17px;
+      margin-right: 10px;
+      background-image: url(/images/menu.svg);
+    }
   }
 }
 
@@ -55,46 +74,107 @@
   @include unstyled-list;
 }
 
-%nav__item {
-  &:not(:first-child) {
-    margin-top: 10px;
-  }
-}
-
 %nav__link {
   @include unstyled-anchor;
-
-  &.is-current, &:hover, &:focus {
-    text-decoration: underline;
-  }
 }
 
 .nav__items {
   @extend %nav__items;
+
+  @include bp-min-medium {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 }
 
 .nav__item {
-  &:not(:first-child) {
-    margin-top: 20px;
+  @include bp-max-medium {
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+}
+
+.nav__item--about {
+  @include bp-min-medium {
+    margin-right: 90px;
+  }
+}
+
+.nav__item--programmes {
+  @include bp-min-medium {
+    margin-left: 90px;
   }
 }
 
 .nav__link {
   @extend %nav__link;
-  font: 24px bold 'Playtime With Hot Toddies', sans-serif;
+  display: block;
+  font: 24px 'Playtime With Hot Toddies', sans-serif;
+
+  @include bp-max-medium {
+    &.is-current,
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  @include bp-min-medium {
+    font-size: 28px;
+
+    &.is-current {
+      position: relative;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -12px;
+        right: -24px;
+        bottom: -12px;
+        left: -24px;
+        background-image: url(/images/outline.svg);
+        background-size: 100% 100%;
+        opacity: .5;
+      }
+    }
+  }
 }
 
 .nav__sub-items {
   @extend %nav__items;
-  margin-top: 10px;
-  margin-left: 10px;
+
+  @include bp-max-medium {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  @include bp-min-medium {
+    @include visually-hidden;
+  }
 }
 
 .nav__sub-item {
   @extend %nav__item;
+
+  @include bp-max-medium {
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
 }
 
 .nav__sub-link {
   @extend %nav__link;
-  color: adjust-color(map-get($colors, nav), $saturation: -50%, $lightness: 75%);
+
+  @include bp-max-medium {
+    color: adjust-color(map-get($colors, nav), $saturation: -50%, $lightness: 75%);
+
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
+  }
 }

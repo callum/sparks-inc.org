@@ -1,0 +1,23 @@
+@mixin bp-max-small {
+  @media (max-width: map-get($breakpoints, small) - 1px) {
+    @content;
+  }
+}
+
+@mixin bp-min-small {
+  @media (min-width: map-get($breakpoints, small)) {
+    @content;
+  }
+}
+
+@mixin bp-max-medium {
+  @media (max-width: map-get($breakpoints, medium) - 1px) {
+    @content;
+  }
+}
+
+@mixin bp-min-medium {
+  @media (min-width: map-get($breakpoints, medium)) {
+    @content;
+  }
+}

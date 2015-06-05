@@ -1,7 +1,15 @@
 .main {
-  background-color: white;
+  flex-shrink: 0;
 }
 
 .main__container {
   @include container;
+
+  @include bp-min-small {
+    @include container--small;
+  }
+
+  @include bp-min-medium {
+    @include container--medium;
+  }
 }

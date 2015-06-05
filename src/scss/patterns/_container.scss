@@ -3,3 +3,11 @@
   margin: auto;
   padding: 16px;
 }
+
+@mixin container--small {
+  padding: 32px 16px;
+}
+
+@mixin container--medium {
+  padding: 48px 32px;
+}
