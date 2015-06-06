@@ -29,12 +29,17 @@ m.use(ignore([
 ]));
 
 if (production) {
-  m.use(fingerprint({ pattern: 'img/**/*' }));
+  m.use(fingerprint({
+    pattern: [
+      'fonts/**/*',
+      'images/**/*'
+    ]
+  }));
 }
 
 m.use(sass({
   outputDir: 'css',
-  outputStyle: production ? 'compact' : 'expanded',
+  outputStyle: production ? 'compressed' : 'expanded',
   sourceMap: !production,
   sourceMapContents: !production,
   sourceMapEmbed: !production,

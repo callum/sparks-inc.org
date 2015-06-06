@@ -3,6 +3,6 @@
   font-style: normal;
   font-weight: 400;
   src: local('Playtime With Hot Toddies'),
-       url(/fonts/playtime.woff2) format('woff2'),
-       url(/fonts/playtime.woff) format('woff');
+       asset-url('fonts/playtime.woff2') format('woff2'),
+       asset-url('fonts/playtime.woff') format('woff');
 }
