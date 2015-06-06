@@ -13,20 +13,20 @@ footer.footer
         div.footer__items-group
           ul.footer__items
             li.footer__item
-              a.footer__link(href='/about') About Sparks
+              a.footer__link(href=pageUrl('about/index.jade')) About Sparks
             li.footer__item
-              a.footer__link(href='/programmes') Our programmes
+              a.footer__link(href=pageUrl('programmes/index.jade')) Our programmes
             li.footer__item
-              a.footer__link(href='/about/policies-procedures.html') Policies & procedures
+              a.footer__link(href=pageUrl('about/policies-procedures.jade')) Policies & procedures
             li.footer__item
-              a.footer__link(href='/about/staff.html') Meet our staff
+              a.footer__link(href=pageUrl('about/staff.jade')) Meet our staff
           ul.footer__items
             li.footer__item
-              a.footer__link(href='/programmes/after-school-club.html') After school club
+              a.footer__link(href=pageUrl('programmes/after-school-club.jade')) After school club
             li.footer__item
-              a.footer__link(href='/programmes/holiday-club.html') Holiday club
+              a.footer__link(href=pageUrl('programmes/holiday-club.jade')) Holiday club
             li.footer__item
-              a.footer__link(href='/about#register') Register with us
+              a.footer__link(href=pageUrl('about/index.jade#register')) Register with us
       section.footer__location
         h3.footer__heading Our address
         a.footer__location-link(href)
@@ -39,7 +39,7 @@ footer.footer
       div.footer__organisation
         section.footer__contacts
           div.footer__contact.footer__contact--phone
-            a.footer__contact-link(href='tel:0117 9244439') 0117 924 4439
+            a.footer__contact-link(href='tel:01179244439') 0117 924 4439
           div.footer__contact.footer__contact--email
             a.footer__contact-link(href='mailto:contact@sparks-inc.org') contact@sparks-inc.org
           div.footer__contact.footer__contact--map

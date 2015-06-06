@@ -1,3 +1,7 @@
+mixin link(href)
+  a(href=pageUrl(href), class={ 'is-current': filename === href })&attributes(attributes)
+    block
+
 nav.nav.js-nav
   header.nav__header
     div.nav__container
@@ -6,26 +10,26 @@ nav.nav.js-nav
     div.nav__container
       ul.nav__items
         li.nav__item.nav__item--home
-          a.nav__link.is-current(href='/') Home
+          +link('index.jade').nav__link Home
         li.nav__item.nav__item--about
-          a.nav__link(href='/about') About Sparks
+          +link('about/index.jade').nav__link About Sparks
           ul.nav__sub-items
             li.nav__sub-item
-              a.nav__sub-link(href='/about/staff.html') Meet our staff
+              +link('about/staff.jade').nav__sub-link Meet our staff
             li.nav__sub-item
-              a.nav__sub-link(href='/about/policies-procedures.html') Policies & procedures
+              +link('about/policies-procedures.jade').nav__sub-link Policies & procedures
         li.nav__item.nav__item--programmes
-          a.nav__link(href='/programmes') Our programmes
+          +link('programmes/index.jade').nav__link Our programmes
           ul.nav__sub-items
             li.nav__sub-item
-              a.nav__sub-link(href='/programmes/breakfast-club.html') Breakfast club
+              +link('programmes/breakfast-club.jade').nav__sub-link Breakfast club
             li.nav__sub-item
-              a.nav__sub-link(href='/programmes/after-school-club.html') After school club
+              +link('programmes/after-school-club.jade').nav__sub-link After school club
             li.nav__sub-item
-              a.nav__sub-link(href='/programmes/holiday-club.html') Holiday club
+              +link('programmes/holiday-club.jade').nav__sub-link Holiday club
             li.nav__sub-item
-              a.nav__sub-link(href='/programmes/taningua.html') Taningua
+              +link('programmes/taningua.jade').nav__sub-link Taningua
             li.nav__sub-item
-              a.nav__sub-link(href='/programmes/sparken-foragers.html') Sparken Foragers
+              +link('programmes/sparken-foragers.jade').nav__sub-link Sparken Foragers
         li.nav__item.nav__item--blog
-          a.nav__link(href='/blog') Blog
+          +link('blog/index.jade').nav__link Blog
