@@ -1,10 +1,10 @@
 'use strict';
 
 var metalsmith = require('metalsmith');
-var autoprefixer = require('metalsmith-autoprefixer');
 var fingerprint = require('metalsmith-fingerprint');
 var ignore = require('metalsmith-ignore');
 var jade = require('metalsmith-jade');
+var postcss = require('metalsmith-postcss');
 var sass = require('metalsmith-sass');
 var serve = require('metalsmith-serve');
 var watch = require('metalsmith-watch');
@@ -46,7 +46,10 @@ m.use(sass({
   includePaths: patterns.includePaths,
   functions: sassHelper(m)
 }));
-m.use(autoprefixer());
+m.use(postcss([
+  require('autoprefixer'),
+  require('css-mqpacker')
+]));
 
 if (production) {
   m.use(fingerprint({ pattern: 'css/**/*' }));
