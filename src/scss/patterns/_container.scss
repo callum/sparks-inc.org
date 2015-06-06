@@ -9,5 +9,9 @@
 }
 
 @mixin container--medium {
+  padding: 40px 24px;
+}
+
+@mixin container--large {
   padding: 48px 32px;
 }

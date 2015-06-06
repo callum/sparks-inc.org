@@ -5,24 +5,30 @@
   mask-size: 100% auto;
   color: white;
 
-  @include bp-min-medium {
+  @include bp-min-small {
+    height: 175px;
+  }
+
+  @include bp-min-large {
     height: 200px;
   }
 }
 
 .header__container {
   @include container;
+  display: flex;
   padding-top: 16px !important;
   padding-bottom: 16px !important;
 
   @include bp-min-small {
     @include container--small;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
 
   @include bp-min-medium {
     @include container--medium;
-    display: flex;
-    height: 100%;
   }
 }
 
@@ -31,8 +37,12 @@
   width: 90px;
   height: 93px;
 
-  @include bp-min-medium {
-    margin: auto;
+  @include bp-min-small {
+    width: 140px;
+    height: 144px;
+  }
+
+  @include bp-min-large {
     width: 160px;
     height: 165px;
   }

@@ -17,10 +17,14 @@
   @include bp-min-medium {
     @include container--medium;
   }
+
+  @include bp-min-large {
+    @include container--large;
+  }
 }
 
 .footer__main {
-  @include bp-min-medium {
+  @include bp-min-small {
     display: flex;
   }
 }
@@ -43,10 +47,15 @@
     background: lighten(map-get($colors, footer), 5%);
   }
 
-  @include bp-min-medium {
+  @include bp-min-small {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    margin-top: 22px;
+    padding-top: 32px;
+  }
+
+  @include bp-min-large {
     margin-top: 32px;
     padding-top: 42px;
   }
@@ -58,13 +67,17 @@
   font-size: 18px;
   color: map-get($colors, header);
 
-  @include bp-min-medium {
+  @include bp-min-small {
+    font-size: 19px;
+  }
+
+  @include bp-min-large {
     font-size: 21px;
   }
 }
 
 .footer__find-us {
-  @include bp-min-medium {
+  @include bp-min-small {
     flex: 1;
   }
 }
@@ -73,13 +86,13 @@
   @include unstyled-list;
   display: flex;
 
-  @include bp-min-medium {
+  @include bp-min-small {
     display: block;
   }
 }
 
 .footer__network {
-  @include bp-max-medium {
+  @include bp-max-small {
     width: 50%;
 
     &:not(:first-child) {
@@ -87,9 +100,9 @@
     }
   }
 
-  @include bp-min-medium {
+  @include bp-min-small {
     &:not(:first-child) {
-      margin-top: 16px;
+      margin-top: 12px;
     }
   }
 }
@@ -118,31 +131,37 @@
     background-size: contain;
   }
 
-  .footer__network--facebook &::before {
-    background-image: url('/images/facebook.svg');
+  .footer__network--facebook & {
+    &::before {
+      background-image: url('/images/facebook.svg');
+    }
   }
 
-  .footer__network--twitter &::before {
-    background-image: url('/images/twitter.svg');
+  .footer__network--twitter & {
+    &::before {
+      background-image: url('/images/twitter.svg');
+    }
   }
 
-  @include bp-min-medium {
-    font-size: 21px;
+  @include bp-min-small {
+    font-size: 19px;
 
     &::before {
-      width: 32px;
-      height: 32px;
-      margin-right: 16px;
+      margin-right: 12px;
     }
+  }
+
+  @include bp-min-large {
+    font-size: 21px;
   }
 }
 
 .footer__useful-links {
-  @include bp-max-medium {
+  @include bp-max-small {
     margin-top: 20px;
   }
 
-  @include bp-min-medium {
+  @include bp-min-small {
     flex: 2;
   }
 }
@@ -165,7 +184,13 @@
     margin-top: 10px;
   }
 
-  @include bp-min-medium {
+  @include bp-min-small {
+    &:not(:first-child) {
+      margin-top: 12px;
+    }
+  }
+
+  @include bp-min-large {
     &:not(:first-child) {
       margin-top: 16px;
     }
@@ -176,12 +201,11 @@
   @include unstyled-anchor;
   font-size: 15px;
 
-  &:hover,
-  &:focus {
+  &:hover, &:focus {
     text-decoration: underline;
   }
 
-  @include bp-min-medium {
+  @include bp-min-small {
     font-size: 16px;
   }
 }
@@ -225,19 +249,39 @@
     background-size: contain;
   }
 
-  .footer__contact--phone &::before {
-    background-image: url(/images/phone.svg);
+  .footer__contact--phone & {
+    &::before {
+      background-image: url(/images/phone.svg);
+    }
   }
 
-  .footer__contact--email &::before {
-    background-image: url(/images/email.svg);
+  .footer__contact--email & {
+    &::before {
+      background-image: url(/images/email.svg);
+    }
   }
 
-  .footer__contact--map &::before {
-    background-image: url(/images/location.svg);
+  .footer__contact--map & {
+    &::before {
+      background-image: url(/images/location.svg);
+    }
   }
 
-  @include bp-min-medium {
+  @include bp-min-small {
+    font-size: 19px;
+
+    &::before {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+    }
+
+    .footer__contact--phone &::before {
+      width: 22px;
+    }
+  }
+
+  @include bp-min-large {
     font-size: 21px;
 
     &::before {
@@ -280,6 +324,10 @@
 
 .footer__location-link {
   @include bp-min-medium {
+    font-size: 19px;
+  }
+
+  @include bp-min-large {
     font-size: 21px;
   }
 }
@@ -305,7 +353,7 @@
   font-size: 15px;
   color: adjust-color(map-get($colors, footer), $saturation: -60%, $lightness: 60%);
 
-  @include bp-min-medium {
+  @include bp-min-small {
     font-size: 16px;
   }
 }
@@ -321,7 +369,7 @@
 }
 
 .footer__assurance {
-  @include bp-max-medium {
+  @include bp-max-small {
     margin-top: 10px;
   }
 }
@@ -332,7 +380,7 @@
   height: 40px;
   margin-left: auto;
 
-  @include bp-min-medium {
+  @include bp-min-small {
     width: 100px;
     height: 50px;
   }

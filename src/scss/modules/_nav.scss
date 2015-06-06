@@ -14,6 +14,14 @@
       background-color: map-get($colors, nav);
     }
   }
+
+  @include bp-min-medium {
+    height: 175px;
+  }
+
+  @include bp-min-large {
+    height: 200px;
+  }
 }
 
 .nav__header {
@@ -36,15 +44,22 @@
       @include visually-hidden;
     }
   }
+
+  @include bp-min-medium {
+    height: 100%;
+  }
 }
 
 .nav__container {
   @include container;
+  height: 100%;
 
   @include bp-min-medium {
     @include container--medium;
-    height: 200px;
-    padding-bottom: 40px;
+  }
+
+  @include bp-min-large {
+    @include container--large;
   }
 }
 
@@ -63,7 +78,21 @@
       position: relative;
       top: -2px;
       width: 22px;
-      height: 17px;
+      height: 22px;
+      margin-right: 10px;
+      background-image: url(/images/menu.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+    }
+  }
+
+  @include bp-min-small {
+    font-size: 28px;
+
+    &::before {
+      width: 24px;
+      height: 24px;
       margin-right: 10px;
       background-image: url(/images/menu.svg);
     }
@@ -99,13 +128,21 @@
 
 .nav__item--about {
   @include bp-min-medium {
-    margin-right: 90px;
+    margin-right: 80px;
+  }
+
+  @include bp-min-large {
+    margin-right: 100px;
   }
 }
 
 .nav__item--programmes {
   @include bp-min-medium {
-    margin-left: 90px;
+    margin-left: 80px;
+  }
+
+  @include bp-min-large {
+    margin-left: 100px;
   }
 }
 
@@ -115,15 +152,13 @@
   font: 24px 'Playtime With Hot Toddies', sans-serif;
 
   @include bp-max-medium {
-    &.is-current,
-    &:hover,
-    &:focus {
+    &.is-current, &:hover, &:focus {
       text-decoration: underline;
     }
   }
 
   @include bp-min-medium {
-    font-size: 28px;
+    font-size: 26px;
 
     &.is-current {
       position: relative;
@@ -132,13 +167,26 @@
         content: '';
         display: block;
         position: absolute;
+        top: -8px;
+        right: -16px;
+        bottom: -8px;
+        left: -16px;
+        background-image: url(/images/outline.svg);
+        background-size: 100% 100%;
+        opacity: .5;
+      }
+    }
+  }
+
+  @include bp-min-large {
+    font-size: 28px;
+
+    &.is-current {
+      &::before {
         top: -12px;
         right: -24px;
         bottom: -12px;
         left: -24px;
-        background-image: url(/images/outline.svg);
-        background-size: 100% 100%;
-        opacity: .5;
       }
     }
   }
