@@ -1,12 +1,26 @@
 .header {
   flex-shrink: 0;
-  background-image: linear-gradient(map-get($colors, header-grade), map-get($colors, header));
-  mask: asset-url('images/wave-bottom.svg') no-repeat center bottom;
-  mask-size: 100% auto;
+  position: relative;
   color: white;
 
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(map-get($colors, header-grade), map-get($colors, header));
+    mask: asset-url('images/wave-bottom.svg') no-repeat center bottom;
+    mask-size: 100% auto;
+  }
+
   @include bp-min-small {
+    display: flex;
     height: 175px;
+    justify-content: center;
+    align-items: center;
   }
 
   @include bp-min-large {
@@ -14,25 +28,15 @@
   }
 }
 
-.header__container {
-  @include container;
-  display: flex;
-  padding-top: 16px !important;
-  padding-bottom: 16px !important;
-
-  @include bp-min-small {
-    @include container--small;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-
-  @include bp-min-medium {
-    @include container--medium;
+.header__main {
+  @include bp-max-small {
+    padding: 16px;
   }
 }
 
 .header__logo {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 90px;
   height: 93px;
