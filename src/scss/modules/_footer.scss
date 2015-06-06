@@ -98,7 +98,7 @@
   @include unstyled-anchor;
   font-size: 18px;
 
-  &:hover, &:focus {
+  &:hover {
     text-decoration: underline;
   }
 }
@@ -188,7 +188,7 @@
   @include unstyled-anchor;
   font-size: 15px;
 
-  &:hover, &:focus {
+  &:hover {
     text-decoration: underline;
   }
 

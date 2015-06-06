@@ -148,7 +148,7 @@
   font: 24px 'Playtime With Hot Toddies', sans-serif;
 
   @include bp-max-medium {
-    &.is-current, &:hover, &:focus {
+    &.is-current, &:hover {
       text-decoration: underline;
     }
   }
@@ -217,7 +217,7 @@
   @include bp-max-medium {
     color: adjust-color(map-get($colors, nav), $saturation: -50%, $lightness: 75%);
 
-    &:hover, &:focus {
+    &:hover {
       text-decoration: underline;
     }
   }

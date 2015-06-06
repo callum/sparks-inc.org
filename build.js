@@ -48,7 +48,8 @@ m.use(sass({
 }));
 m.use(postcss([
   require('autoprefixer'),
-  require('css-mqpacker')
+  require('css-mqpacker'),
+  require('postcss-focus')
 ]));
 
 if (production) {
