@@ -3,6 +3,7 @@
 var path = require('path');
 var readdirp = require('readdirp');
 var s3sync = require('s3-sync');
+var extend = require('xtend');
 var emptyBucket = require('./lib/emptyBucket');
 
 var config = {
@@ -12,14 +13,34 @@ var config = {
   region: 'eu-west-1'
 };
 
-emptyBucket(config, function () {
+function sync(filter, headers) {
+  var opts = extend({
+    headers: headers
+  }, config);
+
   var files = readdirp({
-    root: path.join(__dirname, 'build/')
+    root: path.join(__dirname, 'build/'),
+    fileFilter: filter
   });
 
-  var uploader = s3sync(config).on('data', function (file) {
+  var uploader = s3sync(opts).on('data', function (file) {
     console.log(file.path + ' -> ' + file.url);
   });
 
   files.pipe(uploader);
+}
+
+emptyBucket(config, function () {
+  sync('**/*.+(html|ico|txt)', {
+    'Content-Encoding': 'gzip'
+  });
+
+  sync('**/*.+(css|js|svg)', {
+    'Content-Encoding': 'gzip',
+    'Cache-Control': 'max-age=31536000'
+  });
+
+  sync('**/*.+(gif|jpg|png|woff|woff2)', {
+    'Cache-Control': 'max-age=31536000'
+  });
 });

@@ -2,6 +2,7 @@
 
 var metalsmith = require('metalsmith');
 var fingerprint = require('metalsmith-fingerprint');
+var gzip = require('metalsmith-gzip');
 var ignore = require('metalsmith-ignore');
 var jade = require('metalsmith-jade');
 var postcss = require('metalsmith-postcss');
@@ -63,6 +64,10 @@ m.use(jade({
   locals: jadeHelper(m)
 }));
 m.use(robots());
+
+if (production) {
+  m.use(gzip({ overwrite: true }));
+}
 
 if (watchmode) {
   m.use(watch({
