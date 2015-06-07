@@ -16,21 +16,21 @@ var robots = require('./lib/plugins/robots');
 var jadeHelper = require('./lib/helpers/jade');
 var sassHelper = require('./lib/helpers/sass');
 
-var m = metalsmith(__dirname);
+var ms = metalsmith(__dirname);
 
 var watchmode = process.argv[2] === '-w';
 var production =
   process.env.NODE_ENV === 'staging' ||
   process.env.NODE_ENV === 'production';
 
-m.use(config(process.env.NODE_ENV, watchmode));
-m.use(ignore([
+ms.use(config(process.env.NODE_ENV, watchmode));
+ms.use(ignore([
   'layouts/**/*',
   'partials/**/*'
 ]));
 
 if (production) {
-  m.use(fingerprint({
+  ms.use(fingerprint({
     pattern: [
       'fonts/**/*',
       'images/**/*'
@@ -38,7 +38,7 @@ if (production) {
   }));
 }
 
-m.use(function (files, metalsmith, done) {
+ms.use(function (f, m, d) {
   return sass({
     outputDir: 'css',
     outputStyle: production ? 'compressed' : 'expanded',
@@ -46,35 +46,35 @@ m.use(function (files, metalsmith, done) {
     sourceMapContents: !production,
     sourceMapEmbed: !production,
     includePaths: patterns.includePaths,
-    functions: sassHelper(files, metalsmith)
-  }).apply(this, arguments);
+    functions: sassHelper(f, m)
+  })(f, m, d);
 });
-m.use(postcss([
+ms.use(postcss([
   require('autoprefixer'),
   require('css-mqpacker'),
   require('postcss-focus')
 ]));
 
 if (production) {
-  m.use(fingerprint({ pattern: 'css/**/*' }));
+  ms.use(fingerprint({ pattern: 'css/**/*' }));
 }
 
-m.use(meta());
-m.use(function (files, metalsmith, done) {
+ms.use(meta());
+ms.use(function (f, m, d) {
   return jade({
     pretty: true,
     useMetadata: true,
-    locals: jadeHelper(files, metalsmith)
-  }).apply(this, arguments);
+    locals: jadeHelper(f, m)
+  })(f, m, d);
 });
-m.use(robots());
+ms.use(robots());
 
 if (production) {
-  m.use(gzip({ overwrite: true }));
+  ms.use(gzip({ overwrite: true }));
 }
 
 if (watchmode) {
-  m.use(watch({
+  ms.use(watch({
     paths: {
       'config/**/*': '**/*',
       'src/**/*': true,
@@ -84,13 +84,13 @@ if (watchmode) {
     },
     livereload: true
   }));
-  m.use(serve({
+  ms.use(serve({
     host: '0.0.0.0',
     port: process.env.PORT
   }));
 }
 
-m.build(function (err) {
+ms.build(function (err) {
   if (err) {
     throw err;
   }
