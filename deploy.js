@@ -31,9 +31,8 @@ function sync(filter, headers) {
 }
 
 emptyBucket(config, function () {
-  sync('**/*.+(html|ico|txt)', {
-    'Content-Encoding': 'gzip',
-    'Cache-Control': 'max-age=86400'
+  sync('**/*.+(html|txt)', {
+    'Content-Encoding': 'gzip'
   });
 
   sync('**/*.+(css|js|svg)', {
@@ -41,7 +40,7 @@ emptyBucket(config, function () {
     'Cache-Control': 'max-age=31536000'
   });
 
-  sync('**/*.+(gif|jpg|png|woff|woff2)', {
+  sync('**/*.+(gif|ico|jpg|png|woff|woff2)', {
     'Cache-Control': 'max-age=31536000'
   });
 });
