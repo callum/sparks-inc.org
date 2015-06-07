@@ -32,7 +32,8 @@ function sync(filter, headers) {
 
 emptyBucket(config, function () {
   sync('**/*.+(html|ico|txt)', {
-    'Content-Encoding': 'gzip'
+    'Content-Encoding': 'gzip',
+    'Cache-Control': 'max-age=86400'
   });
 
   sync('**/*.+(css|js|svg)', {
