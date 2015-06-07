@@ -23,7 +23,7 @@
   @include bp-max-medium {
     .nav.is-open & {
       background: darken(map-get($colors, nav), 3%);
-      mask: asset-url('images/wave-bottom.svg') no-repeat center bottom;
+      mask: data-url('images/wave-bottom.svg') no-repeat center bottom;
       mask-size: 100% auto;
     }
   }
@@ -76,7 +76,7 @@
       width: 22px;
       height: 22px;
       margin-right: 10px;
-      background-image: asset-url('images/menu.svg');
+      background-image: data-url('images/menu.svg');
       background-repeat: no-repeat;
       background-position: center center;
       background-size: contain;
@@ -90,7 +90,7 @@
       width: 24px;
       height: 24px;
       margin-right: 10px;
-      background-image: asset-url('images/menu.svg');
+      background-image: data-url('images/menu.svg');
     }
   }
 }
@@ -167,7 +167,7 @@
         right: -16px;
         bottom: -8px;
         left: -16px;
-        background-image: asset-url('images/outline.svg');
+        background-image: data-url('images/outline.svg');
         background-size: 100% 100%;
         opacity: .5;
       }

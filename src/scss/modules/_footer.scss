@@ -2,7 +2,7 @@
   flex-shrink: 0;
   margin-top: auto;
   background-color: map-get($colors, footer);
-  mask: asset-url('images/wave-top.svg') no-repeat center top;
+  mask: data-url('images/wave-top.svg') no-repeat center top;
   mask-size: 100% auto;
   color: white;
 }
@@ -120,13 +120,13 @@
 
   .footer__network--facebook & {
     &::before {
-      background-image: asset-url('images/facebook.svg');
+      background-image: data-url('images/facebook.svg');
     }
   }
 
   .footer__network--twitter & {
     &::before {
-      background-image: asset-url('images/twitter.svg');
+      background-image: data-url('images/twitter.svg');
     }
   }
 
@@ -238,19 +238,19 @@
 
   .footer__contact--phone & {
     &::before {
-      background-image: asset-url('images/phone.svg');
+      background-image: data-url('images/phone.svg');
     }
   }
 
   .footer__contact--email & {
     &::before {
-      background-image: asset-url('images/email.svg');
+      background-image: data-url('images/email.svg');
     }
   }
 
   .footer__contact--map & {
     &::before {
-      background-image: asset-url('images/location.svg');
+      background-image: data-url('images/location.svg');
     }
   }
 

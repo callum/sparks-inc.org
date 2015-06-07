@@ -38,15 +38,17 @@ if (production) {
   }));
 }
 
-m.use(sass({
-  outputDir: 'css',
-  outputStyle: production ? 'compressed' : 'expanded',
-  sourceMap: !production,
-  sourceMapContents: !production,
-  sourceMapEmbed: !production,
-  includePaths: patterns.includePaths,
-  functions: sassHelper(m)
-}));
+m.use(function (files, metalsmith, done) {
+  return sass({
+    outputDir: 'css',
+    outputStyle: production ? 'compressed' : 'expanded',
+    sourceMap: !production,
+    sourceMapContents: !production,
+    sourceMapEmbed: !production,
+    includePaths: patterns.includePaths,
+    functions: sassHelper(files, metalsmith)
+  }).apply(this, arguments);
+});
 m.use(postcss([
   require('autoprefixer'),
   require('css-mqpacker'),
@@ -58,11 +60,13 @@ if (production) {
 }
 
 m.use(meta());
-m.use(jade({
-  pretty: true,
-  useMetadata: true,
-  locals: jadeHelper(m)
-}));
+m.use(function (files, metalsmith, done) {
+  return jade({
+    pretty: true,
+    useMetadata: true,
+    locals: jadeHelper(files, metalsmith)
+  }).apply(this, arguments);
+});
 m.use(robots());
 
 if (production) {
