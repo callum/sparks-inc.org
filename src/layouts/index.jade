@@ -12,8 +12,8 @@ html(lang='en')
     include ../partials/footer
     script.
       var nav = document.querySelector('.js-nav');
-      document.querySelector('.js-nav-toggle').addEventListener('click', function() {
+      document.querySelector('.js-nav-toggle').addEventListener('click', function () {
         nav.classList.toggle('is-open');
-      });
+      }, false);
     if watchmode
       script(src='http://localhost:35729/livereload.js')
