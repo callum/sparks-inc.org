@@ -5,4 +5,34 @@ title: Our clubs
 extends ../layouts/index
 
 block content
-  p Our clubs
+  main.club
+    div.club__container
+      h1.club__heading Our clubs
+      p.club__body We know that parents have needs too: our clubs are there to give you the extra time you want with the peace of mind that comes from knowing your child is being well looked after.
+      p.club__body Sparks is a friendly and creative environment where children can feel at home doing the things they love. We have a wide range of facilities and loads of brilliant activities to suit children’s specific needs and interests.
+      ul.club__clubs
+        li.club__club
+          a(href=pageUrl('clubs/breakfast-club.jade'))
+            img(src=assetUrl('images/munch-flakes.png'))
+            h2 Breakfast Club
+            p Breakfast before drop off to school
+        li.club__club
+          a(href=pageUrl('clubs/after-school-club.jade'))
+            img(src=assetUrl('images/dragon.png'))
+            h2 After School Club
+            p After School Club is where kids come to have fun and wind down after school.
+        li.club__club
+          a(href=pageUrl('clubs/holiday-club.jade'))
+            img(src=assetUrl('images/cooking.png'))
+            h2 Holiday Club
+            p All-day care for 4-14 year olds during the school holidays.
+        li.club__club
+          a(href=pageUrl('clubs/taningua.jade'))
+            img(src=assetUrl('images/cooking.png'))
+            h2 Taningua
+            p Grown-up Sparks
+        li.club__club
+          a(href=pageUrl('clubs/sparken-foragers.jade'))
+            img(src=assetUrl('images/explorer.png'))
+            h2 Sparken Foragers
+            p Forest activities

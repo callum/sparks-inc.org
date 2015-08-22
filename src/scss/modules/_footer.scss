@@ -52,6 +52,7 @@
   margin: 0;
   margin-bottom: 15px;
   font-size: 18px;
+  font-weight: normal;
   color: map-get($colors, header);
 
   @include bp-min-small {

@@ -5,4 +5,40 @@ title: Breakfast Club
 extends ../layouts/index
 
 block content
-  p Breakfast club
+  nav.breadcrumb.js-breadcrumb
+    div.breadcrumb__container
+      ol.breadcrumb__items
+        li.breadcrumb__item
+          a(href=pageUrl('clubs/index.jade')).breadcrumb__link Our clubs
+        li.breadcrumb__item.breadcrumb__item--dropdown
+          a(href=pageUrl('clubs/breakfast-club.jade')).breadcrumb__link.js-breadcrumb-link Breakfast Club
+          div.breadcrumb__overlay.js-breadcrumb-overlay
+          ul.breadcrumb__sub-items
+            li.breadcrumb__sub-item
+              a(href=pageUrl('clubs/after-school-club.jade')).breadcrumb__sub-link After School Club
+            li.breadcrumb__sub-item
+              a(href=pageUrl('clubs/holiday-club.jade')).breadcrumb__sub-link Holiday Club
+            li.breadcrumb__sub-item
+              a(href=pageUrl('clubs/taningua.jade')).breadcrumb__sub-link Taningua
+            li.breadcrumb__sub-item
+              a(href=pageUrl('clubs/sparken-foragers.jade')).breadcrumb__sub-link Sparken Foragers
+
+  main.club
+    div.club__container
+      h1.club__heading Breakfast Club
+
+      h2.club__subheading Times & prices
+      table.club__sessions
+        thead
+          tr
+            th Session
+            th Price per child
+        tbody
+          tr
+            td 07:30 – 08:45
+            td £4.50
+
+      h2.club__subheading Register with us
+      p.club__body At Breakfast Club we accept children from Sefton Park, Brunel Field and St Barnabas schools.
+      a Register now
+

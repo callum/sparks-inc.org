@@ -2,18 +2,32 @@ doctype html
 html(lang='en')
   head
     include ../partials/meta
-    link(rel='stylesheet' href='//fonts.googleapis.com/css?family=Asap:400,700|Roboto:400')
+    link(rel='stylesheet' href='//fonts.googleapis.com/css?family=Asap:400,700|Roboto:400,500')
     link(rel='stylesheet' href=assetUrl('css/index.css'))
   body
     include ../partials/header
-    main.main
-      div.main__container
-        block content
+    block content
     include ../partials/footer
     script.
       var nav = document.querySelector('.js-nav');
       document.querySelector('.js-nav-toggle').addEventListener('click', function () {
         nav.classList.toggle('is-open');
       }, false);
+
+      var breadcrumb = document.querySelector('.js-breadcrumb');
+      if (breadcrumb) {
+        breadcrumb.addEventListener('click', function (e) {
+          var parent = e.target.parentNode;
+
+          if (e.target.classList.contains('js-breadcrumb-link')) {
+            parent.classList.add('is-open');
+            e.preventDefault();
+          }
+
+          if (e.target.classList.contains('js-breadcrumb-overlay')) {
+            parent.classList.remove('is-open');
+          }
+        }, false);
+      }
     if watchmode
       script(src='http://localhost:35729/livereload.js')

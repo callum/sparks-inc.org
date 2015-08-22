@@ -5,4 +5,80 @@ title: Holiday Club
 extends ../layouts/index
 
 block content
-  p Holiday club
+  nav.breadcrumb.js-breadcrumb
+    div.breadcrumb__container
+      ol.breadcrumb__items
+        li.breadcrumb__item
+          a(href=pageUrl('clubs/index.jade')).breadcrumb__link Our clubs
+        li.breadcrumb__item.breadcrumb__item--dropdown
+          a(href=pageUrl('clubs/holiday-club.jade')).breadcrumb__link.js-breadcrumb-link Holiday Club
+          div.breadcrumb__overlay.js-breadcrumb-overlay
+          ul.breadcrumb__sub-items
+            li.breadcrumb__sub-item
+              a(href=pageUrl('clubs/breakfast-club.jade')).breadcrumb__sub-link Breakfast Club
+            li.breadcrumb__sub-item
+              a(href=pageUrl('clubs/after-school-club.jade')).breadcrumb__sub-link After School Club
+            li.breadcrumb__sub-item
+              a(href=pageUrl('clubs/taningua.jade')).breadcrumb__sub-link Taningua
+            li.breadcrumb__sub-item
+              a(href=pageUrl('clubs/sparken-foragers.jade')).breadcrumb__sub-link Sparken Foragers
+
+  main.club
+    div.club__container
+      h1.club__heading Holiday Club
+      p.club__body Holiday Club was established in 2003 to provide all-day care for 4-14 year olds during the school holidays. We have loads of themed activities and fun-packed trips to keep your children busy during their time off.
+
+      h2.club__subheading Things to do
+      p.club__body Each week at Holiday Club is planned around a theme so that children get to experience new things. Some of our previous themes have been Bollywood, Vintage Sports, Circus and Chinese New Year.
+      ul.club__body
+        li Arts & crafts
+        li Cooking
+        li Den building
+        li Dressing up
+        li Sewing
+        li Outdoor play: skateboarding, rollerblading, scootering, tennis, football
+        li Toys & boardgames
+        li Trips to places near and far
+        li Computers (on a rota)
+        li Television (a choice of films to end the day)
+
+      h2.club__subheading What to bring
+      p.club__body Some things to remember to bring to Holiday Club…
+      ul.club__body
+        li Packed lunch with a drink
+        li Weather appropriate clothing (coats, hats, gloves)
+        li Change of clothing and wellies
+        li Swimming costume
+        li Spending money (optional)
+        li Medication*
+      p.club__body Please get in touch or refer to our latest Holiday Club programme for the latest information on what to bring for your chosen sessions.
+      p.club__body
+        em *We must have written permission from a parent or guardian to supply medication.
+
+      h2.club__subheading Times & prices
+      table.club__sessions
+        thead
+          tr
+            th Session
+            th Price per child
+        tbody
+          tr
+            td 08:15 – 17:45
+            td £31.00
+          tr
+            td 08:15 - 13:00
+            td £15.50
+          tr
+            td 13:00 - 17:45
+            td £15.50
+          tr
+            td 09:00 - 15:30
+            td £22.00
+      p.club__body
+        strong N.B. There is a £7.50 supplement for trip days
+      p.club__body
+        em Children must be picked up from Sparks by 17:45 at the very latest to avoid a fee.
+
+      h2.club__subheading Register with us
+      p.club__body We have places for all children aged 4 to 14 in the February, Easter, Summer and October school holidays.
+      a Register now
