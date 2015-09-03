@@ -1,5 +1,6 @@
 {
   "name": "sparks-inc.org",
+  "license": "MIT",
   "scripts": {
     "lint": "eslint *.js **/*.js",
     "build": "node build.js",
