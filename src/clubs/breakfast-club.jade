@@ -5,30 +5,20 @@ title: Breakfast Club
 extends ../layouts/index
 
 block content
-  nav.breadcrumb.js-breadcrumb
-    div.breadcrumb__container
-      ol.breadcrumb__items
-        li.breadcrumb__item
-          a(href=pageUrl('clubs/index.jade')).breadcrumb__link Our clubs
-        li.breadcrumb__item.breadcrumb__item--dropdown
-          a(href=pageUrl('clubs/breakfast-club.jade')).breadcrumb__link.js-breadcrumb-link Breakfast Club
-          div.breadcrumb__overlay.js-breadcrumb-overlay
-          ul.breadcrumb__sub-items
-            li.breadcrumb__sub-item
-              a(href=pageUrl('clubs/after-school-club.jade')).breadcrumb__sub-link After School Club
-            li.breadcrumb__sub-item
-              a(href=pageUrl('clubs/holiday-club.jade')).breadcrumb__sub-link Holiday Club
-            li.breadcrumb__sub-item
-              a(href=pageUrl('clubs/taningua.jade')).breadcrumb__sub-link Taningua
-            li.breadcrumb__sub-item
-              a(href=pageUrl('clubs/sparken-foragers.jade')).breadcrumb__sub-link Sparken Foragers
+  main.main
+    div.main__container
+      h1.main__heading Breakfast Club
+      p.main__body Breakfast Club was set up in 2004 and is ever-growing with more and more parents starting work earlier. We run before school from 07:30 to 08:45.
 
-  main.club
-    div.club__container
-      h1.club__heading Breakfast Club
+      h2.main__subheading What to expect
+      p.main__body We provide a variety of breakfast items ranging from cereal, toast, fruit, yogurt, waffles and pancakes. Children are never made to have something to eat, just encouraged to know that breakfast is the most important meal of the day and without it, the brain cannot function and learn properly.
 
-      h2.club__subheading Times & prices
-      table.club__sessions
+      h2.main__subheading Things to do
+      p.main__body As there is only a short time between the time the children arrive and the time that they go to school, so we do not offer a set activity like we do in After School Club. A range of simple, fun things are on offer such as drawing, junk modelling, reading, playing with toys, playing on the computer or going outside.
+      p.main__body Tidy Up time is at 08:20 after which everyone gets ready to walk to school, to be there by their expected start time.
+
+      h2.main__subheading Times & prices
+      table.main__table
         thead
           tr
             th Session
@@ -38,7 +28,7 @@ block content
             td 07:30 – 08:45
             td £4.50
 
-      h2.club__subheading Register with us
-      p.club__body At Breakfast Club we accept children from Sefton Park, Brunel Field and St Barnabas schools.
+      h2.main__subheading Register with us
+      p.main__body At Breakfast Club we accept children from Sefton Park, Brunel Field and St Barnabas schools.
       a Register now
 

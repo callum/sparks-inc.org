@@ -16,3 +16,49 @@
     @include container--large;
   }
 }
+
+.main__heading {
+  margin-top: 0;
+  font-weight: 500;
+}
+
+%main__text {
+  max-width: 640px;
+  line-height: 1.5;
+  color: #444;
+
+  @include bp-min-small {
+    font-size: 18px;
+  }
+
+  @include bp-min-medium {
+    font-size: 19px;
+  }
+}
+
+.main__body {
+  @extend %main__text;
+}
+
+.main__list {
+  @extend %main__text;
+}
+
+.main__item {
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+}
+
+.main__table {
+  border-collapse: collapse;
+  color: #444;
+
+  td, th {
+    font-size: 19px;
+    line-height: 1.5;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #aaa;
+  }
+}

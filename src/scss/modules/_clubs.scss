@@ -1,0 +1,29 @@
+.clubs {
+  @include unstyled-list;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.clubs__club {
+  width: 50%;
+  padding: 10px 30px;
+  text-align: center;
+
+  @include bp-min-small {
+    width: 33.33%;
+  }
+}
+
+.clubs__anchor {
+  @include unstyled-anchor;
+}
+
+.clubs__image {
+  max-width: 100%;
+}
+
+.clubs__name {
+  margin: 0;
+  color: #ff0049;
+}
