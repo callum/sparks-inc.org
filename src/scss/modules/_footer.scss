@@ -1,6 +1,4 @@
 .footer {
-  flex-shrink: 0;
-  margin-top: auto;
   background-color: map-get($colors, footer);
   mask: data-url('images/wave-top.svg') no-repeat center top;
   mask-size: 100% auto;
