@@ -27,25 +27,6 @@
   }
 }
 
-.footer__footer {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 4px solid lighten(map-get($colors, footer), 5%);
-
-  @include bp-min-small {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-top: 32px;
-    padding-top: 32px;
-  }
-
-  @include bp-min-large {
-    margin-top: 42px;
-    padding-top: 42px;
-  }
-}
-
 .footer__heading {
   margin: 0;
   margin-bottom: 15px;
@@ -326,6 +307,22 @@
   }
 }
 
+.footer__organisation {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 4px solid lighten(map-get($colors, footer), 5%);
+
+  @include bp-min-small {
+    margin-top: 32px;
+    padding-top: 32px;
+  }
+
+  @include bp-min-large {
+    margin-top: 42px;
+    padding-top: 42px;
+  }
+}
+
 .footer__legal {
   margin-top: 20px;
 
@@ -352,28 +349,4 @@
   @include bp-min-medium {
     margin-left: 32px;
   }
-}
-
-.footer__assurance {
-  @include bp-max-small {
-    margin-top: 10px;
-  }
-}
-
-.footer__ofsted {
-  display: block;
-  width: 80px;
-  height: 40px;
-  margin-left: auto;
-
-  @include bp-min-small {
-    width: 100px;
-    height: 50px;
-  }
-}
-
-.footer__ofsted-image {
-  display: block;
-  width: 100%;
-  height: 100%;
 }
