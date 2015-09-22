@@ -1,4 +1,0 @@
-nvm install 0.12.2
-nvm use 0.12.2
-npm install
-NODE_ENV= npm run deploy
