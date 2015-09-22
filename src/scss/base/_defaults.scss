@@ -16,3 +16,16 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
 }
+
+table {
+  border-collapse: collapse;
+  color: #444;
+
+  td, th {
+    font-size: 19px;
+    line-height: 1.5;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #aaa;
+  }
+}

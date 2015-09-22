@@ -1,7 +1,7 @@
 mixin post (post)
   article
-    h3.main__subheading
+    h3
       a(href=pageUrl(post.filename))=post.title
-    p.main__body
+    p
       time(datetime=post.date.toISOString())=post.date.toDateString()
-    p.main__body=post.summary
+    p=post.summary
