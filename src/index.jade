@@ -1,7 +1,13 @@
 extends layouts/index
+include mixins/post
 
 block content
   main.main
     div.main__container
       h1.main__heading Welcome to Sparks!
       p.main__body Sparks Play & Care cares for school children aged 3 to 14 years in Bristol. Our team of passionate and qualified playworkers work together to provide a variety of clubs during term time and holidays.
+
+      h2.main__subheading From the blog
+      for post in posts.slice(0, 3)
+        +post(post)
+      a(href=pageUrl('blog/index.jade')) See more blog posts

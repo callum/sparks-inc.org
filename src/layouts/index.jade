@@ -1,13 +1,13 @@
 doctype html
 html(lang='en')
   head
-    include ../partials/meta
+    include ../includes/meta
     link(rel='stylesheet' href='//fonts.googleapis.com/css?family=Asap:400,700|Roboto:400,500')
     link(rel='stylesheet' href=assetUrl('css/index.css'))
   body
-    include ../partials/header
+    include ../includes/header
     block content
-    include ../partials/footer
+    include ../includes/footer
     script.
       var nav = document.querySelector('.js-nav');
       document.querySelector('.js-nav-toggle').addEventListener('click', function () {
@@ -29,5 +29,3 @@ html(lang='en')
           }
         }, false);
       }
-    if watchmode
-      script(src='http://localhost:35729/livereload.js')

@@ -1,0 +1,10 @@
+extends ./index
+
+block content
+  main.main
+    div.main__container
+      block post
+      if previous
+        div Previous: #[a(href=pageUrl(previous.filename))=previous.title]
+      if next
+        div Next: #[a(href=pageUrl(next.filename))=next.title]

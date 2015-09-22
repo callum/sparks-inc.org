@@ -1,44 +1,43 @@
-'use strict';
+var metalsmith = require('metalsmith')
+var collections = require('metalsmith-collections')
+var fingerprint = require('metalsmith-fingerprint')
+var gzip = require('metalsmith-gzip')
+var ignore = require('metalsmith-ignore')
+var jade = require('metalsmith-jade')
+var postcss = require('metalsmith-postcss')
+var sass = require('metalsmith-sass')
+var patterns = require('css-patterns')
+var config = require('./lib/plugins/config')
+var meta = require('./lib/plugins/meta')
+var robots = require('./lib/plugins/robots')
+var jadeHelper = require('./lib/helpers/jade')
+var sassHelper = require('./lib/helpers/sass')
 
-var metalsmith = require('metalsmith');
-var fingerprint = require('metalsmith-fingerprint');
-var gzip = require('metalsmith-gzip');
-var ignore = require('metalsmith-ignore');
-var jade = require('metalsmith-jade');
-var postcss = require('metalsmith-postcss');
-var sass = require('metalsmith-sass');
-var serve = require('metalsmith-serve');
-var watch = require('metalsmith-watch');
-var patterns = require('css-patterns');
-var config = require('./lib/plugins/config');
-var meta = require('./lib/plugins/meta');
-var robots = require('./lib/plugins/robots');
-var jadeHelper = require('./lib/helpers/jade');
-var sassHelper = require('./lib/helpers/sass');
+var m = metalsmith(__dirname)
 
-var ms = metalsmith(__dirname);
-
-var watchmode = process.argv[2] === '-w';
+var watchmode = process.argv[2] === '-w'
 var production =
   process.env.NODE_ENV === 'staging' ||
-  process.env.NODE_ENV === 'production';
+  process.env.NODE_ENV === 'production'
 
-ms.use(config(process.env.NODE_ENV, watchmode));
-ms.use(ignore([
+m.destination('public')
+m.use(config(process.env.NODE_ENV))
+m.use(ignore([
+  'includes/**/*',
   'layouts/**/*',
-  'partials/**/*'
-]));
+  'mixins/**/*'
+]))
 
 if (production) {
-  ms.use(fingerprint({
+  m.use(fingerprint({
     pattern: [
       'fonts/**/*',
       'images/**/*'
     ]
-  }));
+  }))
 }
 
-ms.use(function (f, m, d) {
+m.use(function (f, m, d) {
   return sass({
     outputDir: 'css',
     outputStyle: production ? 'compressed' : 'expanded',
@@ -47,51 +46,39 @@ ms.use(function (f, m, d) {
     sourceMapEmbed: !production,
     includePaths: patterns.includePaths,
     functions: sassHelper(f, m)
-  })(f, m, d);
-});
-ms.use(postcss([
+  })(f, m, d)
+})
+m.use(postcss([
   require('autoprefixer'),
   require('css-mqpacker'),
   require('postcss-focus')
-]));
+]))
+m.use(collections({
+  posts: {
+    pattern: 'blog/!(index).jade',
+    reverse: true,
+    sortBy: 'date'
+  }
+}))
 
 if (production) {
-  ms.use(fingerprint({ pattern: 'css/**/*' }));
+  m.use(fingerprint({ pattern: 'css/**/*' }))
 }
 
-ms.use(meta());
-ms.use(function (f, m, d) {
+m.use(meta())
+m.use(function (f, m, d) {
   return jade({
     pretty: true,
     useMetadata: true,
     locals: jadeHelper(f, m)
-  })(f, m, d);
-});
-ms.use(robots());
+  })(f, m, d)
+})
+m.use(robots())
 
 if (production) {
-  ms.use(gzip({ overwrite: true }));
+  m.use(gzip({ overwrite: true }))
 }
 
-if (watchmode) {
-  ms.use(watch({
-    paths: {
-      'config/**/*': '**/*',
-      'src/**/*': true,
-      'src/scss/**/*': '**/+(fonts|images|scss)/*',
-      'src/layouts/**/*': '**/*.jade',
-      'src/partials/**/*': '**/*.jade'
-    },
-    livereload: true
-  }));
-  ms.use(serve({
-    host: '0.0.0.0',
-    port: process.env.PORT
-  }));
-}
-
-ms.build(function (err) {
-  if (err) {
-    throw err;
-  }
-});
+m.build(function (err) {
+  if (err) throw err
+})

@@ -1,0 +1,7 @@
+mixin post (post)
+  article
+    h3.main__subheading
+      a(href=pageUrl(post.filename))=post.title
+    p.main__body
+      time(datetime=post.date.toISOString())=post.date.toDateString()
+    p.main__body=post.summary
