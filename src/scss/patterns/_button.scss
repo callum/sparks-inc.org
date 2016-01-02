@@ -1,0 +1,55 @@
+@mixin button {
+  @include unstyled-anchor;
+  @include unstyled-input;
+  display: inline-block;
+  overflow: hidden;
+  padding: 20px;
+  padding-left: 25px;
+  background-image: data-url('images/stroked.svg');
+  background-size: 100% 100%;
+  font: 500 20px 'Roboto', sans-serif;
+  color: map-get($colors, link);
+
+  span {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    top: -2px;
+  }
+}
+
+@mixin button--filled {
+  padding-right: 25px;
+  padding-left: 20px;
+  background-image: data-url('images/filled.svg');
+  font-weight: 400;
+  color: #fff;
+}
+
+@mixin button--cta {
+  @include button--filled;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 19px;
+    height: 21px;
+    margin-left: 10px;
+    vertical-align: middle;
+    background-image: data-url('images/cta.svg');
+  }
+}
+
+@mixin button--download {
+  @include button--filled;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background-image: data-url('images/download.svg');
+  }
+}
