@@ -1,0 +1,21 @@
+.post {
+}
+
+.post__meta {
+  @include body;
+  font-style: italic;
+}
+
+.post__nav-item {
+  @include body;
+  margin: 0;
+
+  & + & {
+    margin-top: 1em;
+  }
+}
+
+.post__nav-label {
+  font-weight: bold;
+  color: #111;
+}

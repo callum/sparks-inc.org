@@ -1,5 +1,5 @@
 extends layouts/index
-include mixins/post
+include mixins/post-preview
 
 block content
   main.main
@@ -7,7 +7,9 @@ block content
       h1 Welcome to Sparks!
       p Sparks Play & Care cares for school children aged 3 to 14 years in Bristol. Our team of passionate and qualified playworkers work together to provide a variety of clubs during term time and holidays.
 
-      h2 From the blog
-      for post in posts.slice(0, 3)
-        +post(post)
-      a(href=pageUrl('blog/index.jade')) See more blog posts
+      section.post-list.post-list--embedded
+        h2.post-list__heading
+          span From the blog
+        for post in posts.slice(0, 3)
+          +post-preview(post)
+        a.post-list__more(href=pageUrl('blog/index.jade')) See more blog posts

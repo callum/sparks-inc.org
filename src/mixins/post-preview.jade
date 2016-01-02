@@ -1,0 +1,7 @@
+mixin post-preview (post)
+  article.post-preview
+    h3.post-preview__title
+      a.post-preview__anchor(href=pageUrl(post.filename))=post.title
+    p.post-preview__meta
+      time(datetime=post.date.toISOString())=post.date.toDateString()
+    p.post-preview__summary=post.summary

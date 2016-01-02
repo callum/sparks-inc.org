@@ -1,0 +1,40 @@
+@mixin heading {
+  margin: 0;
+  line-height: 1.2;
+  color: #111;
+}
+
+@mixin heading--primary {
+  font-size: 22px;
+
+  @include bp-min-small {
+    font-size: 26px;
+  }
+
+  @include bp-min-medium {
+    font-size: 32px;
+  }
+}
+
+@mixin heading--secondary {
+  font-size: 20px;
+
+  @include bp-min-small {
+    font-size: 24px;
+  }
+
+  @include bp-min-medium {
+    font-size: 28px;
+  }
+}
+
+@mixin heading--divider {
+  text-align: center;
+  background: data-url('images/border.svg') center center no-repeat;
+  background-size: 100% 5px;
+
+  span {
+    padding: 0 1em;
+    background-color: #fff;
+  }
+}

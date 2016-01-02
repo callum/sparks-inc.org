@@ -1,0 +1,28 @@
+.post-preview {
+  & + & {
+    margin-top: 32px;
+  }
+}
+
+.post-preview__title {
+  @include heading;
+  @include heading--secondary;
+}
+
+.post-preview__anchor {
+  @include unstyled-anchor;
+}
+
+.post-preview__meta {
+  @include body;
+  margin: 0;
+  margin-top: .2em;
+  font-style: italic;
+  color: map-get($colors, blue);
+}
+
+.post-preview__summary {
+  @include body;
+  margin: 0;
+  margin-top: .6em;
+}

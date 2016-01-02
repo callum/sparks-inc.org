@@ -1,0 +1,21 @@
+.post-list {
+}
+
+.post-list__heading {
+  @include heading;
+  @include heading--primary;
+  margin-bottom: 1em;
+
+  .post-list--embedded & {
+    @include heading--divider;
+  }
+}
+
+.post-list__more {
+  @include button;
+  display: block;
+  width: 240px;
+  margin: auto;
+  margin-top: 32px;
+  text-align: center;
+}

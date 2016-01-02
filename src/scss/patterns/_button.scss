@@ -8,7 +8,7 @@
   background-image: data-url('images/stroked.svg');
   background-size: 100% 100%;
   font: 500 20px 'Roboto', sans-serif;
-  color: map-get($colors, link);
+  color: map-get($colors, blue);
 
   span {
     display: block;

@@ -3,11 +3,12 @@ title: Blog
 ---
 
 extends ../layouts/index
-include ../mixins/post
+include ../mixins/post-preview
 
 block content
   main.main
     div.main__container
-      h1 Blog
-      for post in posts
-        +post(post)
+      div.post-list
+        h1.post-list__heading Blog
+        for post in posts
+          +post-preview(post)

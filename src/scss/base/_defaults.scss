@@ -19,7 +19,6 @@ h1, h2, h3, h4, h5, h6 {
 
 table {
   border-collapse: collapse;
-  color: #444;
 
   td, th {
     font-size: 19px;
@@ -28,4 +27,8 @@ table {
     text-align: left;
     border: 1px solid #aaa;
   }
+}
+
+a {
+  color: map-get($colors, blue);
 }

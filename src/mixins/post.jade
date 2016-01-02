@@ -1,7 +1,0 @@
-mixin post (post)
-  article
-    h3
-      a(href=pageUrl(post.filename))=post.title
-    p
-      time(datetime=post.date.toISOString())=post.date.toDateString()
-    p=post.summary

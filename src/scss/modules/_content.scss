@@ -1,15 +1,5 @@
 .content {
-  font-size: 17px;
-  line-height: 1.5;
-  color: #444;
-
-  @include bp-min-small {
-    font-size: 19px;
-  }
-
-  @include bp-min-medium {
-    font-size: 20px;
-  }
+  @include body;
 
   section {
     &:not(:first-child) {
@@ -18,41 +8,19 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    line-height: 1.2;
-    color: #111;
+    @include heading;
   }
 
   h1 {
-    font-size: 22px;
-
-    @include bp-min-small {
-      font-size: 26px;
-    }
-
-    @include bp-min-medium {
-      font-size: 32px;
-    }
+    @include heading--primary;
   }
 
   h2 {
-    font-size: 20px;
-
-    @include bp-min-small {
-      font-size: 24px;
-    }
-
-    @include bp-min-medium {
-      font-size: 28px;
-    }
+    @include heading--secondary;
   }
 
   p, li {
     max-width: 720px;
-
-    a {
-      color: map-get($colors, link);
-    }
   }
 
   ul, ol {
