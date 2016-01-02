@@ -1,0 +1,73 @@
+.content {
+  font-size: 17px;
+  line-height: 1.5;
+  color: #444;
+
+  @include bp-min-small {
+    font-size: 19px;
+  }
+
+  @include bp-min-medium {
+    font-size: 20px;
+  }
+
+  section {
+    &:not(:first-child) {
+      margin-top: 2em;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    line-height: 1.2;
+    color: #111;
+  }
+
+  h1 {
+    font-size: 22px;
+
+    @include bp-min-small {
+      font-size: 26px;
+    }
+
+    @include bp-min-medium {
+      font-size: 32px;
+    }
+  }
+
+  h2 {
+    font-size: 20px;
+
+    @include bp-min-small {
+      font-size: 24px;
+    }
+
+    @include bp-min-medium {
+      font-size: 28px;
+    }
+  }
+
+  p, li {
+    max-width: 720px;
+  }
+
+  a {
+    color: map-get($colors, link);
+  }
+
+  ul, ol {
+    padding-left: 30px;
+  }
+
+  ul {
+    list-style-type: square;
+  }
+
+  table {
+    margin: 1em 0;
+  }
+}
+
+.content__nowrap {
+  white-space: nowrap;
+}
