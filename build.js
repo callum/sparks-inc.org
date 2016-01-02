@@ -50,7 +50,7 @@ m.use(function (f, m, d) {
 })
 m.use(postcss([
   require('autoprefixer'),
-  require('css-mqpacker'),
+  require('css-mqpacker')({ sort: true }),
   require('postcss-focus')
 ]))
 m.use(collections({
