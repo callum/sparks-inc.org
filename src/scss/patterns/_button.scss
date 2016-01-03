@@ -2,28 +2,37 @@
   @include unstyled-anchor;
   @include unstyled-input;
   display: inline-block;
-  overflow: hidden;
-  padding: 20px;
-  padding-left: 25px;
+  padding: 15px;
+  padding-left: 20px;
   background-image: data-url('images/stroked.svg');
   background-size: 100% 100%;
-  font: 500 20px 'Roboto', sans-serif;
+  font: 500 18px 'Roboto', sans-serif;
   color: map-get($colors, blue);
 
   span {
-    display: block;
-    overflow: hidden;
     position: relative;
     top: -2px;
+  }
+
+  @include bp-min-medium {
+    padding: 20px;
+    padding-left: 25px;
+    font-size: 20px;
   }
 }
 
 @mixin button--filled {
-  padding-right: 25px;
-  padding-left: 20px;
+  padding-right: 20px;
+  padding-left: 15px;
   background-image: data-url('images/filled.svg');
   font-weight: 400;
   color: #fff;
+
+  @include bp-min-medium {
+    padding-right: 25px;
+    padding-left: 20px;
+    font-size: 20px;
+  }
 }
 
 @mixin button--cta {
@@ -31,6 +40,8 @@
 
   &::after {
     content: '';
+    position: relative;
+    top: -2px;
     display: inline-block;
     width: 19px;
     height: 21px;

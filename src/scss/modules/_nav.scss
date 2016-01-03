@@ -10,7 +10,7 @@
       position: fixed;
       z-index: 1;
       bottom: 0;
-      background-color: map-get($colors, nav);
+      background-color: map-get($colors, purple);
     }
   }
 
@@ -22,7 +22,7 @@
 .nav__header {
   @include bp-max-medium {
     .nav.is-open & {
-      background: darken(map-get($colors, nav), 3%);
+      background: darken(map-get($colors, purple), 3%);
       mask: data-url('images/wave-bottom.svg') no-repeat center bottom;
       mask-size: 100% auto;
     }
@@ -215,7 +215,7 @@
   @extend %nav__link;
 
   @include bp-max-medium {
-    color: adjust-color(map-get($colors, nav), $saturation: -50%, $lightness: 75%);
+    color: adjust-color(map-get($colors, purple), $saturation: -50%, $lightness: 75%);
 
     &:hover {
       text-decoration: underline;

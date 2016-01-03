@@ -1,0 +1,38 @@
+.intro {
+  margin-top: -30px;
+  padding-top: 30px;
+  background-color: map-get($colors, purple);
+}
+
+.intro__container {
+  @include container;
+
+  @include bp-min-small {
+    @include container--small;
+  }
+
+  @include bp-min-medium {
+    @include container--medium;
+  }
+
+  @include bp-min-large {
+    @include container--large;
+  }
+}
+
+.intro__heading {
+  @include heading;
+  @include heading--primary;
+  color: map-get($colors, header);
+}
+
+.intro__body {
+  @include body;
+  max-width: 720px;
+  color: rgb(250, 215, 255);
+}
+
+.intro__cta {
+  @include button;
+  @include button--cta;
+}
