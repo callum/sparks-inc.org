@@ -15,6 +15,7 @@
 
 .post-preview__meta {
   @include body;
+  @include body--small;
   margin: 0;
   margin-top: .2em;
   font-style: italic;

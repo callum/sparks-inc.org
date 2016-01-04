@@ -13,12 +13,6 @@
     position: relative;
     top: -2px;
   }
-
-  @include bp-min-medium {
-    padding: 20px;
-    padding-left: 25px;
-    font-size: 20px;
-  }
 }
 
 @mixin button--filled {
@@ -27,12 +21,6 @@
   background-image: data-url('images/filled.svg');
   font-weight: 400;
   color: #fff;
-
-  @include bp-min-medium {
-    padding-right: 25px;
-    padding-left: 20px;
-    font-size: 20px;
-  }
 }
 
 @mixin button--cta {

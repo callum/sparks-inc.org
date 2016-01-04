@@ -11,3 +11,15 @@
     font-size: 20px;
   }
 }
+
+@mixin body--small {
+  font-size: 17px;
+
+  @include bp-min-small {
+    font-size: 19px;
+  }
+
+  @include bp-min-medium {
+    font-size: 19px;
+  }
+}

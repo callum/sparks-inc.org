@@ -28,6 +28,18 @@
   }
 }
 
+@mixin heading--tertiary {
+  font-size: 18px;
+
+  @include bp-min-small {
+    font-size: 22px;
+  }
+
+  @include bp-min-medium {
+    font-size: 24px;
+  }
+}
+
 @mixin heading--divider {
   text-align: center;
   background: data-url('images/border.svg') center center no-repeat;
