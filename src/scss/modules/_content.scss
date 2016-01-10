@@ -19,6 +19,10 @@
     @include heading--secondary;
   }
 
+  h4 + p {
+    margin-top: 0;
+  }
+
   p, li {
     max-width: 720px;
   }
@@ -38,6 +42,11 @@
 
 .content__nowrap {
   white-space: nowrap;
+}
+
+.content__button {
+  @include button;
+  @include button--filled;
 }
 
 .content__cta {
