@@ -9,23 +9,7 @@ html(lang='en')
     block content
     include ../includes/footer
     script.
-      var nav = document.querySelector('.js-nav');
+      var nav = document.querySelector('.js-nav')
       document.querySelector('.js-nav-toggle').addEventListener('click', function () {
-        nav.classList.toggle('is-open');
-      }, false);
-
-      var breadcrumb = document.querySelector('.js-breadcrumb');
-      if (breadcrumb) {
-        breadcrumb.addEventListener('click', function (e) {
-          var parent = e.target.parentNode;
-
-          if (e.target.classList.contains('js-breadcrumb-link')) {
-            parent.classList.add('is-open');
-            e.preventDefault();
-          }
-
-          if (e.target.classList.contains('js-breadcrumb-overlay')) {
-            parent.classList.remove('is-open');
-          }
-        }, false);
-      }
+        nav.classList.toggle('is-open')
+      }, false)
