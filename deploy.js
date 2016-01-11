@@ -29,7 +29,13 @@ function sync (filter, headers) {
 }
 
 emptyBucket(config, function () {
-  sync('**/*.+(html|txt)', {
+  sync('**/*.html', {
+    'Content-Type': 'text/html; charset=utf-8',
+    'Content-Encoding': 'gzip'
+  })
+
+  sync('**/*.txt', {
+    'Content-Type': 'text/plain; charset=utf-8',
     'Content-Encoding': 'gzip'
   })
 
