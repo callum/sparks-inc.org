@@ -11,18 +11,22 @@ nav.nav.js-nav
       ul.nav__items
         li.nav__item.nav__item--home
           +link('index.jade').nav__link Home
-        li.nav__item.nav__item--about
-          +link('about/index.jade').nav__link About Sparks
+        li.nav__item.nav__item--about.js-nav-item
+          +link('about/index.jade').nav__link.js-nav-subnav-toggle About Sparks
           ul.nav__sub-items
+            li.nav__sub-item
+              +link('about/index.jade').nav__sub-link About Sparks
             li.nav__sub-item
               +link('about/team.jade').nav__sub-link Meet our team
             li.nav__sub-item
               +link('about/registration-booking.jade').nav__sub-link Registration & booking
             li.nav__sub-item
               +link('about/policies-procedures.jade').nav__sub-link Policies & procedures
-        li.nav__item.nav__item--clubs
-          +link('clubs/index.jade').nav__link Our clubs
+        li.nav__item.nav__item--clubs.js-nav-item
+          +link('clubs/index.jade').nav__link.js-nav-subnav-toggle Our clubs
           ul.nav__sub-items
+            li.nav__sub-item
+              +link('clubs/index.jade').nav__sub-link Our clubs
             li.nav__sub-item
               +link('clubs/breakfast-club.jade').nav__sub-link Breakfast Club
             li.nav__sub-item

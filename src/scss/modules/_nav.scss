@@ -120,6 +120,10 @@
       margin-top: 20px;
     }
   }
+
+  @include bp-min-medium {
+    position: relative;
+  }
 }
 
 .nav__item--about {
@@ -155,6 +159,23 @@
 
   @include bp-min-medium {
     font-size: 26px;
+
+    .nav__item--about &,
+    .nav__item--clubs & {
+      &::after {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 17px;
+        height: 12px;
+        margin-left: 10px;
+        background-image: data-url('images/down-arrow.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        opacity: .5;
+      }
+    }
 
     &.is-current {
       position: relative;
@@ -197,28 +218,59 @@
   }
 
   @include bp-min-medium {
-    @include visually-hidden;
+    .nav__item:not(.is-open) & {
+      @include visually-hidden;
+    }
+
+    .nav__item.is-open & {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 250px;
+      margin-top: 26px;
+      margin-left: -125px;
+      padding: 20px;
+      background-color: map-get($colors, pink);
+      background-clip: padding-box;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        display: block;
+        margin-left: -20px;
+        border: 20px solid transparent;
+        border-top: none;
+        border-bottom: 12px solid map-get($colors, pink);
+      }
+    }
   }
 }
 
 .nav__sub-item {
   @extend %nav__item;
 
-  @include bp-max-medium {
-    &:not(:first-child) {
-      margin-top: 10px;
-    }
+  &:not(:first-child) {
+    margin-top: 10px;
   }
 }
 
 .nav__sub-link {
   @extend %nav__link;
 
-  @include bp-max-medium {
-    color: adjust-color(map-get($colors, purple), $saturation: -50%, $lightness: 75%);
+  &:hover {
+    text-decoration: underline;
+  }
 
-    &:hover {
-      text-decoration: underline;
-    }
+  @include bp-max-medium {
+    color: map-get($colors, purple-grade);
+  }
+
+  @include bp-min-medium {
+    font-size: 18px;
+    white-space: nowrap;
+    color: white;
   }
 }

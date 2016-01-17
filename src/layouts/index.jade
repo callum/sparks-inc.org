@@ -10,6 +10,45 @@ html(lang='en')
     include ../includes/footer
     script.
       var nav = document.querySelector('.js-nav')
-      document.querySelector('.js-nav-toggle').addEventListener('click', function () {
-        nav.classList.toggle('is-open')
+      var navItems = nav.querySelectorAll('.js-nav-item')
+
+      document.addEventListener('focus', function (event) {
+        var target = event.target
+
+        if (target.matches('.js-nav-item a')) {
+          target.closest('.js-nav-item').classList.add('is-open')
+        }
+      }, true)
+
+      document.addEventListener('blur', function (event) {
+        var target = event.target
+
+        if (target.matches('.js-nav-item a')) {
+          target.closest('.js-nav-item').classList.remove('is-open')
+        }
+      }, true)
+
+      document.addEventListener('click', function (event) {
+        var target = event.target
+
+        if (target.matches('.js-nav-toggle')) {
+          nav.classList.toggle('is-open')
+          return
+        }
+
+        var closest = target.closest('.js-nav-item')
+
+        if (!closest) closeAll(navItems)
+
+        if (target.matches('.js-nav-subnav-toggle')) {
+          closeAll(navItems)
+          closest.classList.add('is-open')
+          event.preventDefault()
+        }
       }, false)
+
+      function closeAll (navItems) {
+        for (var i = 0; i < navItems.length; i++) {
+          navItems[i].classList.remove('is-open')
+        }
+      }
