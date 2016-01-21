@@ -331,6 +331,23 @@
   }
 }
 
+.footer__company {
+  @include unstyled-anchor;
+  display: block;
+
+  @include bp-max-medium {
+    margin-top: 10px;
+  }
+
+  @include bp-min-medium {
+    margin-left: 32px;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .footer__copyright,
 .footer__company {
   font-size: 15px;
@@ -338,15 +355,5 @@
 
   @include bp-min-small {
     font-size: 16px;
-  }
-}
-
-.footer__company {
-  @include bp-max-medium {
-    margin-top: 10px;
-  }
-
-  @include bp-min-medium {
-    margin-left: 32px;
   }
 }
