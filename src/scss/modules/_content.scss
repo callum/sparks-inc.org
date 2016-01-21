@@ -38,6 +38,10 @@
   table {
     margin: 1em 0;
   }
+
+  address {
+    font-style: normal;
+  }
 }
 
 .content__nowrap {
@@ -52,4 +56,36 @@
 .content__cta {
   @include button;
   @include button--cta;
+}
+
+.content__location {
+  margin: 1em 0;
+
+  @include bp-min-small {
+    display: flex;
+  }
+}
+
+.content__location-item {
+  @include bp-max-small {
+    & + & {
+      margin-top: 1em;
+    }
+  }
+
+  @include bp-min-small {
+    width: 300px;
+  }
+}
+
+.content__location-label {
+  @include heading;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  margin-bottom: .5em;
+}
+
+.content__location-link {
+  display: block;
+  margin-top: .5em;
 }
