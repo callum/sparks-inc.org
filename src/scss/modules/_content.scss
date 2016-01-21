@@ -58,6 +58,11 @@
   @include button--cta;
 }
 
+.content__download {
+  @include button;
+  @include button--download;
+}
+
 .content__location {
   margin: 1em 0;
 

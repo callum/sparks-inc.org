@@ -32,7 +32,7 @@
   color: map-get($colors, purple-grade);
 }
 
-.intro__cta {
+.intro__button {
   @include button;
-  @include button--cta;
+  @include button--filled;
 }

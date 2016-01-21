@@ -44,6 +44,8 @@
 
   &::before {
     content: '';
+    position: relative;
+    top: -2px;
     display: inline-block;
     width: 23px;
     height: 23px;
