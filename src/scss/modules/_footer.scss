@@ -110,6 +110,12 @@
     }
   }
 
+  .footer__network--instagram & {
+    &::before {
+      background-image: data-url('images/instagram.svg');
+    }
+  }
+
   @include bp-min-small {
     font-size: 19px;
 
