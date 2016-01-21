@@ -34,5 +34,5 @@
 
 .intro__button {
   @include button;
-  @include button--filled;
+  @include button--primary;
 }

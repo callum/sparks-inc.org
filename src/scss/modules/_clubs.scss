@@ -6,27 +6,37 @@
 .clubs__heading {
   @include heading;
   @include heading--primary;
+  @include heading--divider;
   margin-bottom: .5em;
-
-  .clubs--embedded & {
-    @include heading--divider;
-  }
 }
 
 .clubs__list {
   @include unstyled-list;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+
+  @include bp-min-small {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .clubs__club {
-  width: 50%;
-  padding: 10px 30px;
   text-align: center;
 
+  @include bp-max-small {
+    & + & {
+      margin-top: 1em;
+    }
+  }
+
   @include bp-min-small {
-    width: 33.33%;
+    flex-basis: 50%;
+    padding: 0 20px;
+  }
+
+  @include bp-min-medium {
+    flex-basis: 33.33%;
+    padding: 0 30px;
   }
 }
 
@@ -35,13 +45,29 @@
 }
 
 .clubs__image {
-  max-width: 100%;
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: auto;
+
+  @include bp-min-small {
+    max-width: 240px;
+  }
 }
 
 .clubs__name {
   @include heading;
   @include heading--tertiary;
   margin: 0;
+
+  .clubs__anchor:hover & {
+    text-decoration: underline;
+  }
+}
+
+.clubs__description {
+  @include body;
+  margin: .5em 0;
 }
 
 .clubs__price {
@@ -49,22 +75,15 @@
   margin: 0;
   margin-top: .6em;
   font-style: italic;
+  color: #666;
 }
 
 .clubs__info {
-  margin: 0;
-  margin-top: .4em;
-  color: map-get($colors, blue);
-
-  &::after {
-    content: '';
-    position: relative;
-    top: -2px;
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    margin-left: 10px;
-    vertical-align: middle;
-    background-image: data-url('images/link.svg');
-  }
+  @include button;
+  @include button--primary;
+  display: block;
+  max-width: 180px;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
 }

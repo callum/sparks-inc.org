@@ -1,13 +1,9 @@
 @mixin button {
   @include unstyled-anchor;
-  @include unstyled-input;
   display: inline-block;
   padding: 15px;
-  padding-left: 20px;
-  background-image: data-url('images/stroked.svg');
   background-size: 100% 100%;
-  font: 500 18px 'Roboto', sans-serif;
-  color: map-get($colors, blue);
+  font: 18px 'Roboto', sans-serif;
 
   span {
     position: relative;
@@ -15,17 +11,20 @@
   }
 }
 
-@mixin button--filled {
+@mixin button--primary {
   padding-right: 20px;
-  padding-left: 15px;
   background-image: data-url('images/filled.svg');
-  font-weight: 400;
   color: #fff;
 }
 
-@mixin button--cta {
-  @include button--filled;
+@mixin button--secondary {
+  padding-left: 20px;
+  background-image: data-url('images/stroked.svg');
+  font-weight: 500;
+  color: map-get($colors, blue);
+}
 
+@mixin button--cta {
   &::after {
     content: '';
     position: relative;
@@ -40,8 +39,6 @@
 }
 
 @mixin button--download {
-  @include button--filled;
-
   &::before {
     content: '';
     position: relative;

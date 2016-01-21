@@ -12,28 +12,24 @@ block content
         p We know that parents have needs too: our clubs are there to give you the extra time you want with the peace of mind that comes from knowing your child is being well looked after.
         p Sparks provides a friendly and creative environment where children can feel at home doing the things they love. Our clubs have a wide range of facilities and loads of brilliant activities to suit children’s specific needs and interests.
 
+      include ../includes/clubs
+
       section.clubs
+        h2.clubs__heading
+          span Extras
         ul.clubs__list
-          li.clubs__club
-            a.clubs__anchor(href=pageUrl('clubs/breakfast-club.jade'))
-              img.clubs__image(src=assetUrl('images/munch-flakes.png'))
-              h2.clubs__name Breakfast Club
-          li.clubs__club
-            a.clubs__anchor(href=pageUrl('clubs/after-school-club.jade'))
-              img.clubs__image(src=assetUrl('images/dragon.png'))
-              h2.clubs__name After School Club
-          li.clubs__club
-            a.clubs__anchor(href=pageUrl('clubs/holiday-club.jade'))
-              img.clubs__image(src=assetUrl('images/cooking.png'))
-              h2.clubs__name Holiday Club
           li.clubs__club
             a.clubs__anchor(href=pageUrl('clubs/taningua.jade'))
               img.clubs__image(src=assetUrl('images/cooking.png'))
               h2.clubs__name Taningua
+              p.clubs__description Grown-up activities for 9 to 14 year olds
+              p.clubs__info Learn more
           li.clubs__club
             a.clubs__anchor(href=pageUrl('clubs/sparken-foragers.jade'))
               img.clubs__image(src=assetUrl('images/explorer.png'))
               h2.clubs__name Sparken Foragers
+              p.clubs__description A place to learn all about nature and bushcraft
+              p.clubs__info Learn more
 
       div.content
         h2 Our premises

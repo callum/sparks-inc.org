@@ -50,16 +50,18 @@
 
 .content__button {
   @include button;
-  @include button--filled;
+  @include button--primary;
 }
 
 .content__cta {
   @include button;
+  @include button--primary;
   @include button--cta;
 }
 
 .content__download {
   @include button;
+  @include button--primary;
   @include button--download;
 }
 
