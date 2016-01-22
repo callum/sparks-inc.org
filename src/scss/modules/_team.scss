@@ -1,0 +1,22 @@
+.team {
+  @include tiles;
+}
+
+.team__member {
+  @include tiles__item;
+}
+
+.team__image {
+  @include tiles__image;
+  border-radius: 50%;
+}
+
+.team__name {
+  @include tiles__heading;
+}
+
+.team__role {
+  @include tiles__description;
+  margin: 0;
+  margin-top: .2em;
+}

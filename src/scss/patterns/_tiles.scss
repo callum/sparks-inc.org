@@ -1,0 +1,45 @@
+@mixin tiles {
+  @include bp-min-small {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@mixin tiles__item {
+  text-align: center;
+
+  @include bp-max-small {
+    & + & {
+      margin-top: 1em;
+    }
+  }
+
+  @include bp-min-small {
+    flex-basis: 50%;
+    padding: 20px;
+  }
+
+  @include bp-min-medium {
+    flex-basis: 33.33%;
+  }
+}
+
+@mixin tiles__image {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: auto;
+}
+
+@mixin tiles__heading {
+  @include heading;
+  @include heading--tertiary;
+  margin: 0;
+  margin-top: .6em;
+}
+
+@mixin tiles__description {
+  @include body;
+  margin: .5em 0;
+}

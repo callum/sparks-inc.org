@@ -12,32 +12,11 @@
 
 .clubs__list {
   @include unstyled-list;
-
-  @include bp-min-small {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+  @include tiles;
 }
 
 .clubs__club {
-  text-align: center;
-
-  @include bp-max-small {
-    & + & {
-      margin-top: 1em;
-    }
-  }
-
-  @include bp-min-small {
-    flex-basis: 50%;
-    padding: 0 20px;
-  }
-
-  @include bp-min-medium {
-    flex-basis: 33.33%;
-    padding: 0 30px;
-  }
+  @include tiles__item;
 }
 
 .clubs__anchor {
@@ -45,20 +24,13 @@
 }
 
 .clubs__image {
-  display: block;
-  width: 100%;
-  max-width: 200px;
-  margin: auto;
-
-  @include bp-min-small {
-    max-width: 240px;
-  }
+  @include tiles__image;
+  max-width: 240px;
 }
 
 .clubs__name {
-  @include heading;
-  @include heading--tertiary;
-  margin: 0;
+  @include tiles__heading;
+  margin-top: 0;
 
   .clubs__anchor:hover & {
     text-decoration: underline;
@@ -66,8 +38,7 @@
 }
 
 .clubs__description {
-  @include body;
-  margin: .5em 0;
+  @include tiles__description;
 }
 
 .clubs__price {
