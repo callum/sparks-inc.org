@@ -1,4 +1,5 @@
 var metalsmith = require('metalsmith')
+var changed = require('metalsmith-changed')
 var collections = require('metalsmith-collections')
 var fingerprint = require('metalsmith-fingerprint')
 var gzip = require('metalsmith-gzip')
@@ -21,6 +22,12 @@ var production =
   process.env.NODE_ENV === 'production'
 
 m.destination('public')
+
+if (!production) {
+  m.clean(false)
+  m.use(changed())
+}
+
 m.use(config(process.env.NODE_ENV))
 m.use(ignore([
   'includes/**/*',
@@ -45,14 +52,18 @@ m.use(function (f, m, d) {
     sourceMapContents: !production,
     sourceMapEmbed: !production,
     includePaths: patterns.includePaths,
-    functions: sassHelper(f, m)
+    functions: sassHelper(f, m, production)
   })(f, m, d)
 })
-m.use(postcss([
-  require('autoprefixer'),
-  require('css-mqpacker')({ sort: true }),
-  require('postcss-focus')
-]))
+
+if (production) {
+  m.use(postcss([
+    require('autoprefixer'),
+    require('css-mqpacker')({ sort: true }),
+    require('postcss-focus')
+  ]))
+}
+
 m.use(collections({
   posts: {
     pattern: 'blog/!(index).jade',
@@ -65,12 +76,12 @@ if (production) {
   m.use(fingerprint({ pattern: 'css/**/*' }))
 }
 
-m.use(meta())
+m.use(meta(production))
 m.use(function (f, m, d) {
   return jade({
     pretty: true,
     useMetadata: true,
-    locals: jadeHelper(f, m)
+    locals: jadeHelper(f, m, production)
   })(f, m, d)
 })
 m.use(robots())
