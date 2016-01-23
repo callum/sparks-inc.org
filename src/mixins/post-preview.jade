@@ -5,3 +5,4 @@ mixin post-preview (post)
     p.post-preview__meta
       time(datetime=post.date.toISOString())=post.date.toDateString()
     p.post-preview__summary=post.summary
+    a.post-preview__more(href=pageUrl(post.filename)) Read more
