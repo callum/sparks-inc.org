@@ -3,6 +3,7 @@ title: Meet our team
 ---
 
 extends ../layouts/index
+include ../mixins/team-member
 
 block content
   main.main
@@ -13,63 +14,32 @@ block content
         p We’re always on the lookout for new faces to join the Sparks Family. If you have an interest in working with children, whether you have the relevant experience or not, please get in touch with us.
 
       div.team
-        article.team__member
-          img(src=assetUrl('images/team/2016-01-18_11-25-13_007.jpg')).team__image
-          h2.team__name Carole Theyer
-          div.team__role CEO, Company Secretary & Director
-        article.team__member
-          img(src=assetUrl('images/team/2016-01-18_11-40-56_008.jpg')).team__image
-          h2.team__name Liam Jefferies
-          div.team__role General Manager & Director
-        article.team__member
-          img(src=assetUrl('images/team/2016-01-18_11-24-48_006.jpg')).team__image
-          h2.team__name Becky Frape
-          div.team__role Director & Deputy Manager
-        article.team__member
-          img(src=assetUrl('images/team/2015-09-23_18-01-08_011.jpg')).team__image
-          h2.team__name Lucy Morgan
-          div.team__role Director & Senior Playworker
-        article.team__member
-          img(src=assetUrl('images/team/2016-01-18_12-41-23_009.jpg')).team__image
-          h2.team__name David Baptiste
-          div.team__role Director
-        article.team__member
-          img(src=assetUrl('images/team/2015-09-24_13-43-07_002.jpg')).team__image
-          h2.team__name Chloe Blackman
-          div.team__role Senior Playworker
-        article.team__member
-          img(src=assetUrl('images/team/2015-09-23_17-59-59_012.jpg')).team__image
-          h2.team__name Marie Edwards
-          div.team__role Senior Playworker
-        article.team__member
-          img(src=assetUrl('images/team/2016-01-11_15-08-33_015.jpg')).team__image
-          h2.team__name Sophie Gore Browne
-          div.team__role Senior Playworker
-        article.team__member
-          img(src=assetUrl('images/team/2015-09-23_17-58-19_013.jpg')).team__image
-          h2.team__name Rosa Wilkinson
-          div.team__role Playworker
-        article.team__member
-          img(src=assetUrl('images/team/2015-09-23_18-06-46_003.jpg')).team__image
-          h2.team__name Ella Newton
-          div.team__role Playworker
-        article.team__member
-          img(src=assetUrl('images/team/2015-09-24_18-32-03_014.jpg')).team__image
-          h2.team__name Ryan Cunningham
-          div.team__role Playworker
-        article.team__member
-          img(src=assetUrl('images/team/2015-09-23_18-02-39_004.jpg')).team__image
-          h2.team__name Hannah Moylan
-          div.team__role Playworker
-        article.team__member
-          img(src=assetUrl('images/team/2015-09-23_17-58-50_010.jpg')).team__image
-          h2.team__name Jeff Emmott
-          div.team__role Playworker
-        article.team__member
-          img(src=assetUrl('images/team/2016-01-22_13-01-48_001.jpg')).team__image
-          h2.team__name Brian Titley
-          div.team__role Southwest Co-operative Support Consultant
-        article.team__member
-          img(src=assetUrl('images/team/2016-01-22_13-01-48_005.jpg')).team__image
-          h2.team__name Hilary Sudbury
-          div.team__role Southwest Co-operative Support Consultant
+        //- management
+        +team-member('Carole Theyer', 'CEO, Company Secretary & Director', '2016-01-18_11-25-13_007.jpg')
+        +team-member('Liam Jefferies', 'General Manager & Director', '2016-01-18_11-40-56_008.jpg')
+        +team-member('Becky Frape', 'Director & Deputy Manager', '2016-01-18_11-24-48_006.jpg')
+        +team-member('Lucy Morgan', 'Director & Senior Playworker', '2015-09-23_18-01-08_011.jpg')
+        +team-member('David Baptiste', 'Director', '2016-01-18_12-41-23_009.jpg')
+        //- senior playworkers
+        +team-member('Chloe Blackman', 'Senior Playworker', '2015-09-24_13-43-07_002.jpg')
+        +team-member('Marie Edwards', 'Senior Playworker', '2015-09-23_17-59-59_012.jpg')
+        +team-member('Sophie Gore Browne', 'Senior Playworker', '2016-01-11_15-08-33_015.jpg')
+        //- playworkers
+        +team-member('Caitlin Wilson', 'Playworker', '2016-01-23_11-13-51_001.jpg')
+        +team-member('Ella Newton', 'Playworker', '2015-09-23_18-06-46_003.jpg')
+        +team-member('Hannah Moylan', 'Playworker', '2015-09-23_18-02-39_004.jpg')
+        +team-member('Jeff Emmott', 'Playworker', '2015-09-23_17-58-50_010.jpg')
+        +team-member('Rosa Wilkinson', 'Playworker', '2015-09-23_17-58-19_013.jpg')
+        +team-member('Ryan Cunningham', 'Playworker', '2015-09-24_18-32-03_014.jpg')
+        //- juniour playworkers
+        +team-member('Cheyenne James', 'Junior Playworker', '2015-04-24_16-28-14_003.jpg')
+        +team-member('Ella Clifton', 'Junior Playworker', '2015-07-10_17-34-13_004.jpg')
+        +team-member('Isabel Everington', 'Junior Playworker', '2016-01-23_15-05-50_005.jpg')
+        +team-member('Isobel Reid', 'Junior Playworker', '2013-10-08_16-18-20_006.jpg')
+        +team-member('Molly Duggan', 'Junior Playworker', '2015-04-27_16-27-15_007.jpg')
+        +team-member('Mya Cartmel', 'Junior Playworker', '2016-01-23_13-36-12_008.jpg')
+        +team-member('Rudy Jewels', 'Junior Playworker', '2015-09-23_18-03-25_009.jpg')
+        //- extras
+        +team-member('Brian Titley', 'Southwest Co-operative Support Consultant', '2016-01-22_13-01-48_001.jpg')
+        +team-member('Hilary Sudbury', 'Southwest Co-operative Support Consultant', '2016-01-22_13-01-48_005.jpg')
+        +team-member('Callum Jefferies', 'Graphic & Web Designer', '2015-04-22_16-17-36_002.jpg')
