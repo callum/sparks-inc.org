@@ -1,9 +1,16 @@
 {
   "facebook": {
-    "site": "coopsparks"
+    "site": "https://facebook.com/coopsparks"
   },
   "twitter": {
-    "site": "@coopsparks"
+    "site": "https://twitter.com/coopsparks"
+  },
+  "instagram": {
+    "site": "https://instagram.com/sparksplayandcare"
+  },
+  "map": {
+    "main": "https://www.google.co.uk/maps/place/St.+Bartholomews+Rd,+Bristol,+City+of+Bristol+BS7+9BJ/@51.4746878,-2.5849833,17z",
+    "office": "https://www.google.co.uk/maps/place/The+Coach+House,+2+Upper+York+St,+Bristol,+City+of+Bristol+BS2+8QN/@51.460815,-2.591085,17z"
   },
   "meta": {
     "title": "Sparks Play & Care",
