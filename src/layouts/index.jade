@@ -15,7 +15,7 @@ html(lang='en')
       document.addEventListener('focus', function (event) {
         var target = event.target
 
-        if (target.matches('.js-nav-item a')) {
+        if (target.matches('.js-nav-sub-link')) {
           target.closest('.js-nav-item').classList.add('is-open')
         }
       }, true)
@@ -23,7 +23,7 @@ html(lang='en')
       document.addEventListener('blur', function (event) {
         var target = event.target
 
-        if (target.matches('.js-nav-item a')) {
+        if (target.matches('.js-nav-sub-link')) {
           target.closest('.js-nav-item').classList.remove('is-open')
         }
       }, true)
@@ -40,7 +40,7 @@ html(lang='en')
 
         if (!closest) closeAll(navItems)
 
-        if (target.matches('.js-nav-subnav-toggle')) {
+        if (target.matches('.js-nav-link') && !closest.classList.contains('is-open')) {
           closeAll(navItems)
           closest.classList.add('is-open')
           event.preventDefault()
