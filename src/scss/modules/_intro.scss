@@ -4,7 +4,7 @@
   background-color: map-get($colors, purple);
 }
 
-.intro--display {
+.intro--background {
   position: relative;
   background-position: center center;
   background-size: cover;
@@ -36,8 +36,11 @@
     @include container--large;
   }
 
-  .intro--display & {
+  .intro--background & {
     position: relative;
+  }
+
+  .intro--badge & {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -59,7 +62,7 @@
   max-width: 720px;
   color: map-get($colors, purple-grade);
 
-  .intro--display & {
+  .intro--background & {
     color: white;
   }
 }
@@ -69,20 +72,20 @@
   @include button--primary;
 }
 
-.intro__display-primary {
+.intro__primary {
   flex: 4;
+}
+
+.intro__secondary {
+  flex: 2;
 
   @include bp-max-small {
-    margin-top: 30px;
+    margin-bottom: 30px;
   }
 
   @include bp-min-small {
-    margin-right: 30px;
+    margin-left: 30px;
   }
-}
-
-.intro__display-secondary {
-  flex: 2;
 }
 
 .intro__badge {

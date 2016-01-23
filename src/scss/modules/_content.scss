@@ -37,11 +37,38 @@
 
   table {
     margin: 1em 0;
-  }
+    border-collapse: collapse;
 
-  address {
-    font-style: normal;
+    td, th {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #aaa;
+    }
   }
+}
+
+.content__image {
+  display: block;
+  width: 100%;
+  margin: 1em auto;
+
+  @include bp-max-small {
+    max-width: 240px;
+  }
+}
+
+.content__image--float {
+  border-radius: 50%;
+
+  @include bp-min-small {
+    float: right;
+    width: 40%;
+    margin: 1em;
+  }
+}
+
+.content__media {
+  @include fluid-media-wrapper;
 }
 
 .content__nowrap {
@@ -63,6 +90,19 @@
   @include button;
   @include button--primary;
   @include button--download;
+}
+
+.content__aside {
+  display: flex;
+}
+
+.content__aside-text {
+  flex: 3;
+}
+
+.content__aside-image {
+  flex: 2;
+  margin-left: 30px;
 }
 
 .content__location {

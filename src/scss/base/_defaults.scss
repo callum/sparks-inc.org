@@ -8,7 +8,7 @@ body {
   text-size-adjust: 100%;
 }
 
-img {
+img, iframe {
   border: none;
 }
 
@@ -17,18 +17,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-table {
-  border-collapse: collapse;
-
-  td, th {
-    font-size: 19px;
-    line-height: 1.5;
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #aaa;
-  }
-}
-
 a {
   color: map-get($colors, blue);
+}
+
+address {
+  font-style: normal;
 }
