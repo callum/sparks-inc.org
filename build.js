@@ -55,15 +55,11 @@ m.use(function (f, m, d) {
     functions: sassHelper(f, m, production)
   })(f, m, d)
 })
-
-if (production) {
-  m.use(postcss([
-    require('autoprefixer'),
-    require('css-mqpacker')({ sort: true }),
-    require('postcss-focus')
-  ]))
-}
-
+m.use(postcss([
+  require('autoprefixer'),
+  require('css-mqpacker')({ sort: true }),
+  require('postcss-focus')
+]))
 m.use(collections({
   posts: {
     pattern: 'blog/!(index).jade',
