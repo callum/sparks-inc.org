@@ -89,8 +89,19 @@
 }
 
 .intro__badge {
+  @include fluid-media-wrapper(1 1);
+
+  @include bp-max-small {
+    width: 200px;
+  }
+}
+
+.intro__badge-wrap {
+  @include fluid-media-wrapper__media;
+}
+
+.intro__badge-image {
   width: 100%;
-  max-width: 240px;
   padding: 5px;
   border-radius: 50%;
   background-color: rgba(white, .15);
