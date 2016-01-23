@@ -17,7 +17,7 @@
     "metalsmith": "^1.7.0",
     "metalsmith-changed": "^0.2.0",
     "metalsmith-collections": "^0.7.0",
-    "metalsmith-fingerprint": "callum/metalsmith-fingerprint",
+    "metalsmith-fingerprint-ignore": "^1.1.2",
     "metalsmith-gzip": "^1.1.0",
     "metalsmith-ignore": "^0.1.2",
     "metalsmith-jade": "^2.0.0",
