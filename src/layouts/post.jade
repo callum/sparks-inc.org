@@ -5,7 +5,7 @@ block content
     div.main__container
       div.post
         div.post__body
-          block post
+          block body
         p.post__meta Published #[time(datetime=date.toISOString())=date.toDateString()]
         if previous || next
           nav.post__nav

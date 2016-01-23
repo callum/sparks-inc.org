@@ -11,6 +11,10 @@
 
 .post-preview__anchor {
   @include unstyled-anchor;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .post-preview__meta {
@@ -18,7 +22,6 @@
   @include body--small;
   margin: 0;
   margin-top: .2em;
-  font-style: italic;
   color: map-get($colors, blue);
 }
 

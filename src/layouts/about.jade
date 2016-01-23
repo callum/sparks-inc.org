@@ -1,0 +1,16 @@
+extends ./index
+
+block content
+  nav.page-nav
+    div.page-nav__container
+      ul.page-nav__items
+        li.page-nav__item
+          +link('about/index.jade').page-nav__link About Sparks
+        li.page-nav__item
+          +link('about/team.jade').page-nav__link Meet our team
+        li.page-nav__item
+          +link('about/registration-booking.jade').page-nav__link Registration & booking
+        li.page-nav__item
+          +link('about/policies-procedures.jade').page-nav__link Policies & procedures
+
+  block body
