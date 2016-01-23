@@ -6,12 +6,16 @@ extends ../layouts/index
 
 block content
   main.main
+    div.intro.intro--display(style=backgroundImageStyle('images/photos/2015-10-22_11-17-44.jpg'))
+      div.intro__container
+        div.intro__display-primary
+          h1.intro__heading Holiday Club
+          p.intro__body Holiday Club was established in 2003 to provide all-day care for 3 to 14 year olds during the school holidays. We have loads of themed activities and fun-packed trips to keep your children busy during their time off.
+        div.intro__display-secondary
+          img.intro__badge(src=assetUrl('images/cooking.png'))
+
     div.main__container
       div.content
-        section
-          h1 Holiday Club
-          p Holiday Club was established in 2003 to provide all-day care for 3 to 14 year olds during the school holidays. We have loads of themed activities and fun-packed trips to keep your children busy during their time off.
-
         section
           h2 What to expect
           p We offer an environment where children can play freely – inside or out. We host a number of planned activities each day which children can choose from.

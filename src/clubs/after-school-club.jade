@@ -6,12 +6,16 @@ extends ../layouts/index
 
 block content
   main.main
+    div.intro.intro--display(style=backgroundImageStyle('images/photos/2015-06-03_16-57-00.jpg'))
+      div.intro__container
+        div.intro__display-primary
+          h1.intro__heading After School Club
+          p.intro__body After School Club is where kids come to have fun and wind down after a busy day at school. It’s our most-loved club and has been providing after school care since 1982. We now have up to 65 children a day with 8 trained playworkers to support them.
+        div.intro__display-secondary
+          img.intro__badge(src=assetUrl('images/dragon.png'))
+
     div.main__container
       div.content
-        section
-          h1 After School Club
-          p After School Club is where kids come to have fun and wind down after a busy day at school. It’s our most-loved club and has been providing after school care since 1982. We now have up to 65 children a day with 8 trained playworkers to support them.
-
         section
           h2 What to expect
           p Most children are collected at the end of their school day from their classrooms. Infants from Sefton Park are collected from their classrooms by a playworker and juniors make their own way to Sparks. All children from Brunel Field and St Barnabas schools are collected from their classrooms and escorted back to the terrapin wearing Hi Vis jackets.

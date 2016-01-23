@@ -4,6 +4,23 @@
   background-color: map-get($colors, purple);
 }
 
+.intro--display {
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(map-get($colors, purple), .65);
+  }
+}
+
 .intro__container {
   @include container;
 
@@ -18,6 +35,17 @@
   @include bp-min-large {
     @include container--large;
   }
+
+  .intro--display & {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    @include bp-min-small {
+      flex-direction: row;
+    }
+  }
 }
 
 .intro__heading {
@@ -30,9 +58,37 @@
   @include body;
   max-width: 720px;
   color: map-get($colors, purple-grade);
+
+  .intro--display & {
+    color: white;
+  }
 }
 
 .intro__button {
   @include button;
   @include button--primary;
+}
+
+.intro__display-primary {
+  flex: 4;
+
+  @include bp-max-small {
+    margin-top: 30px;
+  }
+
+  @include bp-min-small {
+    margin-right: 30px;
+  }
+}
+
+.intro__display-secondary {
+  flex: 2;
+}
+
+.intro__badge {
+  width: 100%;
+  max-width: 240px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: rgba(white, .15);
 }
