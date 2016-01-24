@@ -15,34 +15,34 @@ html(lang='en')
       document.addEventListener('focus', function (event) {
         var target = event.target
 
-        if (target.matches('.js-nav-sub-link')) {
-          target.closest('.js-nav-item').classList.add('is-open')
+        if (matches(target, '.js-nav-sub-link')) {
+          closest(target, '.js-nav-item').classList.add('is-open')
         }
       }, true)
 
       document.addEventListener('blur', function (event) {
         var target = event.target
 
-        if (target.matches('.js-nav-sub-link')) {
-          target.closest('.js-nav-item').classList.remove('is-open')
+        if (matches(target, '.js-nav-sub-link')) {
+          closest(target, '.js-nav-item').classList.remove('is-open')
         }
       }, true)
 
       document.addEventListener('click', function (event) {
         var target = event.target
 
-        if (target.matches('.js-nav-toggle')) {
+        if (matches(target, '.js-nav-toggle')) {
           nav.classList.toggle('is-open')
           return
         }
 
-        var closest = target.closest('.js-nav-item')
+        var parent = closest(target, '.js-nav-item')
 
-        if (!closest) closeAll(navItems)
+        if (!parent) closeAll(navItems)
 
-        if (target.matches('.js-nav-link') && !closest.classList.contains('is-open')) {
+        if (matches(target, '.js-nav-link') && !parent.classList.contains('is-open')) {
           closeAll(navItems)
-          closest.classList.add('is-open')
+          parent.classList.add('is-open')
           event.preventDefault()
         }
       }, false)
@@ -51,4 +51,20 @@ html(lang='en')
         for (var i = 0; i < navItems.length; i++) {
           navItems[i].classList.remove('is-open')
         }
+      }
+
+      function closest (element, selector) {
+        if (element.closest) return element.closest(selector)
+
+        while (element) {
+          if (matches(element, selector)) return element
+          element = element.parentElement
+        }
+
+        return null
+      }
+
+      function matches (element, selector) {
+        var method = element.matches || element.webkitMatchesSelector || element.oMatchesSelector || element.msMatchesSelector || element.mozMatchesSelector
+        return method.call(element, selector)
       }

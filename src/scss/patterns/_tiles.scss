@@ -16,12 +16,12 @@
   }
 
   @include bp-min-small {
-    flex-basis: 50%;
+    width: 50%;
     padding: 20px;
   }
 
   @include bp-min-medium {
-    flex-basis: 33.33%;
+    width: 33.33%;
   }
 }
 
