@@ -4,10 +4,13 @@ var s3sync = require('s3-sync')
 var extend = require('xtend')
 var emptyBucket = require('./lib/emptyBucket')
 
+var bucket = process.env.NODE_ENV
+if (bucket === 'production') bucket = 'www'
+
 var config = {
   key: process.env.AWS_ACCESS_KEY,
   secret: process.env.AWS_SECRET_KEY,
-  bucket: process.env.NODE_ENV + '.sparks-inc.org',
+  bucket: bucket + '.sparks-inc.org',
   region: 'eu-west-1'
 }
 
