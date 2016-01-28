@@ -19,11 +19,20 @@
     @include heading--secondary;
   }
 
+  h2 {
+    @include heading--secondary;
+  }
+
   h4 + p {
     margin-top: 0;
   }
 
-  p, li {
+  h1 + h2,
+  h2 + h3 {
+    margin-top: 1em;
+  }
+
+  p, li, dl {
     max-width: 720px;
   }
 
@@ -44,6 +53,14 @@
       text-align: left;
       border: 1px solid #aaa;
     }
+  }
+
+  dt {
+    @include heading;
+  }
+
+  blockquote {
+    font-style: italic;
   }
 }
 
