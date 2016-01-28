@@ -88,10 +88,6 @@
   @include fluid-media-wrapper;
 }
 
-.content__nowrap {
-  white-space: nowrap;
-}
-
 .content__button {
   @include button;
   @include button--primary;
