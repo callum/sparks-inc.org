@@ -116,6 +116,12 @@
     }
   }
 
+  .footer__network--youtube & {
+    &::before {
+      background-image: data-url('images/youtube.svg');
+    }
+  }
+
   @include bp-min-small {
     font-size: 19px;
 
