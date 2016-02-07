@@ -319,7 +319,8 @@
   }
 }
 
-.footer__organisation {
+.footer__footer {
+  display: flex;
   margin-top: 20px;
   padding-top: 20px;
   border-top: 4px solid lighten(map-get($colors, footer), 5%);
@@ -327,11 +328,30 @@
   @include bp-min-small {
     margin-top: 32px;
     padding-top: 32px;
+    align-items: flex-end;
+  }
+
+  @include bp-min-medium {
+    align-items: center;
   }
 
   @include bp-min-large {
     margin-top: 42px;
     padding-top: 42px;
+  }
+}
+
+.footer__organisation {
+  flex: 1;
+}
+
+.footer__affiliates {
+  @include bp-max-small {
+    display: none;
+  }
+
+  @include bp-min-small {
+    margin-left: 20px;
   }
 }
 
@@ -368,4 +388,12 @@
   @include bp-min-small {
     font-size: 16px;
   }
+}
+
+.footer__affiliate {
+  @include unstyled-anchor;
+}
+
+.footer__affiliate-image {
+  display: block;
 }

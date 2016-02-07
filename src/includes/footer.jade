@@ -43,14 +43,18 @@ footer.footer
             div Ashley Down
             div Bristol BS7 9BJ
           div.footer__location-map See us on a map
-    div.footer__organisation
-      section.footer__contacts
-        div.footer__contact.footer__contact--phone
-          a.footer__contact-link(href='tel:01179244439') 0117 924 4439
-        div.footer__contact.footer__contact--email
-          a.footer__contact-link(href='mailto:coopsparks@gmail.com') coopsparks@gmail.com
-        div.footer__contact.footer__contact--map
-          a.footer__contact-link(href=map.main) See us on a map
-      section.footer__legal
-        div.footer__copyright © #{new Date().getUTCFullYear()} Sparks Co-operative Ltd
-        a.footer__company(href='https://beta.companieshouse.gov.uk/company/05295308') Company no. 05295308
+    div.footer__footer
+      div.footer__organisation
+        section.footer__contacts
+          div.footer__contact.footer__contact--phone
+            a.footer__contact-link(href='tel:01179244439') 0117 924 4439
+          div.footer__contact.footer__contact--email
+            a.footer__contact-link(href='mailto:coopsparks@gmail.com') coopsparks@gmail.com
+          div.footer__contact.footer__contact--map
+            a.footer__contact-link(href=map.main) See us on a map
+        section.footer__legal
+          div.footer__copyright © #{new Date().getUTCFullYear()} Sparks Co-operative Ltd
+          a.footer__company(href='https://beta.companieshouse.gov.uk/company/05295308') Company no. 05295308
+      div.footer__affiliates
+        a.footer__affiliate(href='http://www.bigpotential.org.uk')
+          img.footer__affiliate-image(src=assetUrl('images/big-potential.svg'))
