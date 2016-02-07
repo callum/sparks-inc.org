@@ -51,19 +51,19 @@
 
 .footer__networks {
   @include unstyled-list;
-  display: flex;
 
-  @include bp-min-small {
-    display: block;
+  @include bp-max-small {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
 .footer__network {
   @include bp-max-small {
-    width: 50%;
+    flex-basis: 50%;
 
-    &:not(:first-child) {
-      margin-left: 20px;
+    &:nth-child(-n+2) {
+      margin-bottom: 12px;
     }
   }
 
