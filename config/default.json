@@ -12,8 +12,9 @@
     "site": "https://www.youtube.com/user/ctheyer90"
   },
   "map": {
-    "main": "https://www.google.co.uk/maps/place/St.+Bartholomews+Rd,+Bristol,+City+of+Bristol+BS7+9BJ/@51.4746878,-2.5849833,17z",
-    "office": "https://www.google.co.uk/maps/place/The+Coach+House,+2+Upper+York+St,+Bristol,+City+of+Bristol+BS2+8QN/@51.460815,-2.591085,17z"
+    "office": "https://www.google.co.uk/maps/place/The+Coach+House,+2+Upper+York+St,+Bristol,+City+of+Bristol+BS2+8QN/@51.460815,-2.591085,17z",
+    "seftonPark": "https://www.google.co.uk/maps/place/St.+Bartholomews+Rd,+Bristol,+City+of+Bristol+BS7+9BJ/@51.4746878,-2.5849833,17z",
+    "fairlawn": "https://www.google.co.uk/maps/place/Fairlawn+Primary+School/@51.469691,-2.5845357,17z"
   },
   "meta": {
     "title": "Sparks Play & Care",
