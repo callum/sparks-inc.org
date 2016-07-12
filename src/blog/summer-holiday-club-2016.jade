@@ -1,0 +1,53 @@
+---
+title: Summer Holiday Club 2016
+summary: We’re gearing up for a fun-packed summer holiday here at Sparks, and we have just released our programmes for Holiday Club and Taningua. Get them now!
+date: 2016-07-12
+---
+
+extends ../layouts/post
+
+block body
+  div.content
+    h1=title
+    p We’re gearing up for a fun-packed summer holiday here at Sparks, and we have just released our programmes for Holiday Club and Taningua.
+    p We’ve got 6 full weeks planned with loads of cool themed activities and trips to take part in.
+    table
+      thead
+        tr
+          th Week
+          th Theme
+          th Trip
+      tbody
+        tr
+          td 1
+          td Space
+          td At-Bristol Science Centre
+        tr
+          td 2
+          td Farm
+          td Windmill Hill City Farm
+        tr
+          td 3
+          td Survival
+          td Leigh Woods
+        tr
+          td 4
+          td Fiesta
+          td Langland Bay, Swansea
+        tr
+          td 5
+          td Super Science
+          td Ashton Court
+        tr
+          td 6
+          td Disney
+          td N/A
+    p For full details of what we’ve got planned, please download the programme using the link below.
+    a.content__download(href=assetUrl('files/holiday-club-summer-2016-programme.pdf')) Download the Summer Holiday Club 2016 Programme
+    p
+      em For Holiday Club session times and prices, #[a(href=pageUrl('clubs/holiday-club.jade')) please click here].
+    p Our Taningua programme for 2016 includes some awesome stuff for the older ones! We’ll be doing trampolining, Parkour, Capoeira, kayaking, high ropes, raft building, and loads more! Again, for full details, please download the programme using the link below.
+    a.content__download(href=assetUrl('files/taningua-2016-programme.pdf')) Download the Taningua 2016 Programme
+    p
+      em For Taningua session times and prices, #[a(href=pageUrl('clubs/taningua.jade')) please click here].
+

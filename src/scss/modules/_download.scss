@@ -1,0 +1,9 @@
+.download {
+  text-align: center;
+}
+
+.download__button {
+  @include button;
+  @include button--primary;
+  @include button--download;
+}
