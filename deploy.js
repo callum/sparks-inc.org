@@ -47,7 +47,7 @@ emptyBucket(config, function () {
     'Cache-Control': 'max-age=31536000'
   })
 
-  sync('**/*.+(gif|ico|jpg|png|woff|woff2)', {
+  sync('**/*.+(gif|ico|jpg|png|woff|woff2|pdf)', {
     'Cache-Control': 'max-age=31536000'
   })
 })
