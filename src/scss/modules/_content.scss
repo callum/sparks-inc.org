@@ -123,6 +123,7 @@
 
   @include bp-min-small {
     display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -134,7 +135,23 @@
   }
 
   @include bp-min-small {
-    width: 300px;
+    width: 50%;
+
+    &:nth-child(n+3) {
+      margin-top: 1.5em;
+    }
+  }
+
+  @include bp-min-medium {
+    width: 33.33%;
+
+    &:nth-child(n+3) {
+      margin-top: 0;
+    }
+
+    &:nth-child(n+4) {
+      margin-top: 1.5em;
+    }
   }
 }
 
