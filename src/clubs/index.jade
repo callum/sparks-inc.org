@@ -32,8 +32,28 @@ block content
               p.clubs__info Learn more
 
       div.content
-        h2 Our premises
-        img.content__image.content__image--float(src=assetUrl('images/photos/2015-07-30_16-13-52.jpg'))
-        p Sparks is based in the green terrapin classrooms that you can see from the entrance of Sefton Park school. There are two large classrooms, two bathrooms with four toilets in each, a lobby that joins both rooms with pegs to hang coats & bags and an adult bathroom. We share this space with Sefton Park which they will be using as an art and music studio during the day.
-        p The terrapin is located at ground level with main access from the front of the building. There are also fire exits at the back of the building which we can also use for easy outside access.
+        h2#locations Our locations
+        p Sparks operates at four different locations so that we can provide the widest range of childcare.
 
+      section.locations
+        ul.locations__list
+          li.locations__location
+            img(src=assetUrl('images/photos/2015-07-30_16-13-52.jpg')).locations__image
+            h3.locations__name Sefton Park School
+            div.locations__description
+              a(href=map.seftonPark) See on a map
+          li.locations__location
+            img(src=assetUrl('images/photos/2016-11-14_15-22-07.jpg')).locations__image
+            h3.locations__name Fairlawn School
+            div.locations__description
+              a(href=map.fairlawn) See on a map
+          li.locations__location
+            img(src=assetUrl('images/photos/2016-11-15_09-04-20.jpg')).locations__image
+            h3.locations__name The Scout Hut
+            div.locations__description
+              a(href=map.scoutHut) See on a map
+          li.locations__location
+            img(src=assetUrl('images/photos/2016-11-14_15-50-19.jpg')).locations__image
+            h3.locations__name St Bart’s Church Hall
+            div.locations__description
+              a(href=map.stBartsHall) See on a map
