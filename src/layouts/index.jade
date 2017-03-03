@@ -68,3 +68,7 @@ html(lang='en')
         var method = element.matches || element.webkitMatchesSelector || element.oMatchesSelector || element.msMatchesSelector || element.mozMatchesSelector
         return method.call(element, selector)
       }
+    if gallery
+      script(src=assetUrl('js/zoom-image.min.js'))
+      script.
+        new ZoomImage(document.querySelectorAll('.js-zoom'))

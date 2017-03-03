@@ -39,7 +39,8 @@ if (production) {
   m.use(fingerprint({
     pattern: [
       'fonts/**/*',
-      'images/**/*'
+      'images/**/*',
+      'js/**/*'
     ]
   }))
 }
