@@ -1,9 +1,20 @@
 .post {
 }
 
+.post__title {
+  @include heading;
+  @include heading--primary;
+}
+
 .post__meta {
   @include body;
-  font-style: italic;
+  margin-top: .5em;
+  margin-bottom: 1.5em;
+  color: #666;
+}
+
+.post__nav {
+  margin-top: 1.5em;
 }
 
 .post__nav-item {

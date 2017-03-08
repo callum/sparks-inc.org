@@ -4,9 +4,14 @@ block content
   main.main
     div.main__container
       div.post
+        h1.post__title=title
+        p.post__meta
+         | Published
+         if author
+           |  by #{author}, 
+         time(datetime=date.toISOString())=date.toDateString()
         div.post__body
           block body
-        p.post__meta Published #[time(datetime=date.toISOString())=date.toDateString()]
         if previous || next
           nav.post__nav
           if previous

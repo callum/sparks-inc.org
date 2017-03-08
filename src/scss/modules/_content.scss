@@ -200,7 +200,7 @@
   flex: 1;
 
   & + & {
-    margin-left: 5em;
+    margin-left: .5em;
 
     @include bp-min-small {
       margin-left: 1em;
