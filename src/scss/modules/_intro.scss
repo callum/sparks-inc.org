@@ -40,14 +40,18 @@
     position: relative;
   }
 
-  .intro--badge & {
+  .intro--badge &,
+  .intro--video & {
     display: flex;
     flex-direction: column-reverse;
-    align-items: center;
 
     @include bp-min-small {
       flex-direction: row;
     }
+  }
+
+  .intro--badge & {
+    align-items: center;
   }
 }
 
@@ -79,6 +83,10 @@
 .intro__secondary {
   flex: 2;
 
+  .intro--video & {
+    flex: 4;
+  }
+
   @include bp-max-small {
     margin-bottom: 30px;
   }
@@ -105,4 +113,13 @@
   padding: 5px;
   border-radius: 50%;
   background-color: rgba(white, .15);
+}
+
+.intro__video {
+  border: 20px solid rgba(white, .15);
+  border-radius: 20px;
+}
+
+.intro__video-container {
+  @include fluid-media-wrapper;
 }

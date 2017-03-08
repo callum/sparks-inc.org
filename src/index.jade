@@ -2,11 +2,16 @@ extends layouts/index
 include mixins/post-preview
 
 block content
-  div.intro.intro--background(style=backgroundImageStyle('images/photos/2015-08-26_13-03-14.jpg'))
+  div.intro.intro--video.intro--background(style=backgroundImageStyle('images/photos/2015-08-26_13-03-14.jpg'))
     div.intro__container
-      h1.intro__heading Welcome to Sparks!
-      p.intro__body Sparks Play & Care cares for school children aged 3 to 14 years in Bristol. Our family of passionate and qualified playworkers work together to provide a variety of clubs during term time and holidays.
-      a.intro__button(href=pageUrl('about/index.jade')) Learn more about Sparks
+      div.intro__primary
+        h1.intro__heading Welcome to Sparks!
+        p.intro__body Sparks Play & Care cares for school children aged 3 to 14 years in Bristol. Our family of passionate and qualified playworkers work together to provide a variety of clubs during term time and holidays.
+        a.intro__button(href=pageUrl('about/index.jade')) Learn more about Sparks
+      div.intro__secondary
+        div.intro__video
+          div.intro__video-container
+            iframe(src='https://www.youtube.com/embed/2UiQgtFeD0c?rel=0')
 
   main.main
     div.main__container
