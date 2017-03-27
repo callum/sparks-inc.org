@@ -1,8 +1,6 @@
 var metalsmith = require('metalsmith')
 var changed = require('metalsmith-changed')
 var collections = require('metalsmith-collections')
-var fingerprint = require('metalsmith-fingerprint-ignore')
-var gzip = require('metalsmith-gzip')
 var ignore = require('metalsmith-ignore')
 var jade = require('metalsmith-jade')
 var postcss = require('metalsmith-postcss')
@@ -16,7 +14,6 @@ var sassHelper = require('./lib/helpers/sass')
 
 var m = metalsmith(__dirname)
 
-var watchmode = process.argv[2] === '-w'
 var production =
   process.env.NODE_ENV === 'staging' ||
   process.env.NODE_ENV === 'production'
@@ -34,16 +31,6 @@ m.use(ignore([
   'layouts/**/*',
   'mixins/**/*'
 ]))
-
-if (production) {
-  m.use(fingerprint({
-    pattern: [
-      'fonts/**/*',
-      'images/**/*',
-      'js/**/*'
-    ]
-  }))
-}
 
 m.use(function (f, m, d) {
   return sass({
@@ -69,10 +56,6 @@ m.use(collections({
   }
 }))
 
-if (production) {
-  m.use(fingerprint({ pattern: 'css/**/*' }))
-}
-
 m.use(meta(production))
 m.use(function (f, m, d) {
   return jade({
@@ -82,10 +65,6 @@ m.use(function (f, m, d) {
   })(f, m, d)
 })
 m.use(robots())
-
-if (production) {
-  m.use(gzip({ overwrite: true }))
-}
 
 m.build(function (err) {
   if (err) throw err
