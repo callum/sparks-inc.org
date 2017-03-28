@@ -1,4 +1,6 @@
 .post-preview {
+  max-width: 720px;
+
   & + & {
     margin-top: 32px;
   }
@@ -21,7 +23,7 @@
   @include body;
   @include body--small;
   margin: 0;
-  margin-top: .2em;
+  margin-top: .3em;
   color: map-get($colors, blue);
 }
 
