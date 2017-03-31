@@ -1,14 +1,13 @@
 var metalsmith = require('metalsmith')
 var collections = require('metalsmith-collections')
 var fingerprint = require('metalsmith-fingerprint-ignore')
-var ignore = require('metalsmith-ignore')
 var postcss = require('metalsmith-postcss')
 var serve = require('metalsmith-serve')
 var watch = require('metalsmith-watch')
 var patterns = require('css-patterns')
 var config = require('./lib/plugins/config')
-var jade = require('./lib/plugins/jade')
 var meta = require('./lib/plugins/meta')
+var pug = require('./lib/plugins/pug')
 var robots = require('./lib/plugins/robots')
 var sass = require('./lib/plugins/sass')
 
@@ -20,13 +19,13 @@ var production =
   process.env.NODE_ENV === 'production'
 
 msmith.destination('public')
-
-msmith.use(ignore([
+msmith.ignore([
   'includes/**/*',
   'layouts/**/*',
   'mixins/**/*',
   '**/.*'
-]))
+])
+
 msmith.use(config(process.env.NODE_ENV, watchmode))
 msmith.use(meta())
 msmith.use(robots())
@@ -34,7 +33,7 @@ msmith.use(robots())
 if (production) {
   msmith.use(fingerprint({
     pattern: [
-      '**/*.!(jade|scss)',
+      '**/*.!(pug|scss)',
       '!favicon.ico',
       '!robots.txt'
     ]
@@ -51,7 +50,6 @@ msmith.use(sass({
 }))
 msmith.use(postcss([
   require('autoprefixer'),
-  require('css-mqpacker')({ sort: true }),
   require('postcss-focus')
 ]))
 
@@ -59,12 +57,12 @@ if (production) msmith.use(fingerprint({ pattern: ['**/*.css'] }))
 
 msmith.use(collections({
   posts: {
-    pattern: 'blog/!(index).jade',
+    pattern: 'blog/!(index).pug',
     reverse: true,
     sortBy: 'date'
   }
 }))
-msmith.use(jade({
+msmith.use(pug({
   pretty: true,
   useMetadata: true
 }))
@@ -73,9 +71,9 @@ if (watchmode) {
   msmith.use(watch({
     paths: {
       'config/**/*': '**/*',
-      'src/**/*.jade': '**/*.jade',
+      'src/**/*.pug': '**/*.pug',
       'src/**/*.scss': 'scss/index.scss',
-      'src/**/*.!(jade|scss)': true
+      'src/**/*.!(pug|scss)': true
     },
     livereload: true
   }))
