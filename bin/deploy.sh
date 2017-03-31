@@ -12,4 +12,4 @@ aws s3 sync public/ $AWS_S3_BUCKET --delete --acl public-read \
   --include 'favicon.ico' \
   --include 'robots.txt' \
   --cache-control 'no-cache'
-aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths /*
+aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths '/*'
