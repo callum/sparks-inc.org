@@ -1,0 +1,10 @@
+pip install awscli
+aws configure set preview.cloudfront true
+
+nvm install 0.12.2
+nvm use 0.12.2
+npm install
+
+export NODE_ENV=my_environment
+export AWS_S3_BUCKET=s3://my_s3_bucket/
+export AWS_CLOUDFRONT_DISTRIBUTION_ID=my_cloudfront_distribution_id
