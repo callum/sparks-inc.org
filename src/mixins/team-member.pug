@@ -1,5 +1,8 @@
 mixin team-member (name, role, image)
   article.team__member
-    img(src=assetUrl('images/team/' + image)).team__image
+    if image
+      img(src=assetUrl('images/team/' + image)).team__image
+    else
+      div.team__placeholder
     h2.team__name=name
     div.team__role=role

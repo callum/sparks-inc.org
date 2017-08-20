@@ -6,9 +6,15 @@
   @include tiles__item;
 }
 
-.team__image {
+.team__image,
+.team__placeholder {
   @include tiles__image;
   border-radius: 50%;
+}
+
+.team__placeholder {
+  height: 200px;
+  background-color: #eee;
 }
 
 .team__name {
