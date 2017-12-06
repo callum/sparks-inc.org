@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 npm run build
 aws s3 sync public/ $AWS_S3_BUCKET --delete --acl public-read \
   --exclude '*.html' \
