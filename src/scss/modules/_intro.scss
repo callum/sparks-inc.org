@@ -44,14 +44,11 @@
   .intro--video & {
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
 
     @include bp-min-small {
       flex-direction: row;
     }
-  }
-
-  .intro--badge & {
-    align-items: center;
   }
 }
 

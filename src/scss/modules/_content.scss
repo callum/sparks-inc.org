@@ -70,7 +70,8 @@
   }
 
   blockquote {
-    font-style: italic;
+    margin: 0;
+    padding: 0;
   }
 
   figure blockquote {
@@ -79,6 +80,10 @@
 
   figcaption {
     font-weight: bold;
+  }
+
+  q {
+    font-style: italic;
   }
 }
 
@@ -229,4 +234,10 @@
 .content__gallery-image {
   display: block;
   max-width: 100%;
+}
+
+.content__intro {
+  margin-top: 0;
+  font-size: 1.25em;
+  font-weight: bold;
 }
