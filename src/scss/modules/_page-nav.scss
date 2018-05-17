@@ -48,9 +48,6 @@
   &:hover,
   &.is-current {
     color: map-get($colors, pink);
-  }
-
-  &.is-current {
     border-bottom-color: currentColor;
   }
 }

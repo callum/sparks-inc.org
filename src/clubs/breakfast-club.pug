@@ -1,29 +1,62 @@
 ---
-title: Breakfast Club
+title: Breakfast Club @ Sparks
+description: Our increasingly popular Breakfast Club helps ease the early morning rush for busy working parents.
 ---
 
 extends ../layouts/index
 
 block content
+  div.intro.intro--video.intro--background(style=backgroundImageStyle('images/photos/2016-01-12_15-45-45.jpg'))
+    div.intro__container
+      div.intro__primary
+        h1.intro__heading Breakfast Club @ Sparks
+        p.intro__body Our increasingly popular Breakfast Club helps ease the early morning rush for busy working parents.
+      div.intro__secondary
+        div.intro__video
+          div.intro__video-container
+            iframe(src='https://www.youtube.com/embed/GRDu0i2MMk4?rel=0')
+              
+  nav.page-nav
+    div.page-nav__container
+      ul.page-nav__items
+        li.page-nav__item
+          +link('/clubs/breakfast-club.html#what-to-expect').page-nav__link What to expect
+        li.page-nav__item
+          +link('/clubs/breakfast-club.html#things-to-do').page-nav__link Things to do
+        li.page-nav__item
+          +link('/clubs/breakfast-club.html#sessions-prices').page-nav__link Sessions & prices
+        li.page-nav__item
+          +link('/clubs/breakfast-club.html#register').page-nav__link Register with us
+          
   main.main
-    div.intro.intro--badge.intro--background(style=backgroundImageStyle('images/photos/2016-01-12_15-45-45.jpg'))
-      div.intro__container
-        div.intro__primary
-          h1.intro__heading Breakfast Club
-          p.intro__body Our increasingly popular Breakfast Club helps ease the early morning rush for busy working parents.
-        div.intro__secondary
-          div.intro__badge
-            div.intro__badge-wrap
-              img.intro__badge-image(src=assetUrl('images/munch-flakes.png'))
-
     div.main__container
       div.content
         section
+          blockquote
+            div.callout
+              img(src=assetUrl('images/team/2016-01-18_11-25-13_007.jpg')).callout__image
+              p.callout__body “I’m Ian, and I run Breakfast Club @ Sparks.
+            p “I love working with Children because they’re so incredibly full of fun and energy, even first thing in the morning! I enjoy being up bright and early and making sure the children have had a hearty breakfast, and give them the opportunity to get messy, creative or just make noise! 
+            p “I particularly enjoy working outdoors, being in nature and giving the children lots of freedom and choices.
+            p “The Scout Hut is the perfect base for Breakfast Club as it has loads of space for the children to run around and play inside and out. Our crafting table is also very popular with many children opting to start the day by expressing themselves creatively. 
+            p “The children love choosing their own breakfasts. We always have a variety of items on offer, including seasonal breakfast treats like pancakes on Pancake Day and hot cross buns leading up to Easter! The children really enjoy being able to choose their own activities too, and often make up new and original games or twists on the ones we already know. 
+            p “One of the things I love most about Breakfast Club is seeing the children come together to work towards a common goal. They all play together regardless of age and which school they’re from so it’s wonderful to see friendships blossom between children who otherwise may not have ever met if it weren’t for Sparks.”
+
+          p Here’s what some of the children told us they like most about Sparks Breakfast Club in their own words. 
+          
+          p #[q Space for hanging out on our own without parents or teachers!] – Polly aged 10
+          p #[q Playing with my friend before school] – Ellie aged 4
+          p #[q Fruit loaf!] – Martha aged 6
+          p #[q Crumpets!] – Edith aged 6
+          p #[q I like playing chess and the bus game.] – Louis aged 5
+          p #[q The activity table! Colouring is my favourite.] – Imogen aged 6
+
+        section#what-to-expect
           h2 What to expect
-          p We take a child-led approach to everything we do at Sparks, and Breakfast Club is no exception. We provide scrumptious and nutritious morning meals, including cereal, porridge, toast, fruit, yogurt, crumpets and fruit bread.
+          p We take a child-led approach to everything we do at Sparks, and Breakfast Club is no exception. We provide scrumptious and nutritious morning meals, including cereal, porridge, toast, fruit, yogurt, crumpets and fruit bread. New from April 18 Children can make their own fruit smoothies.
           p We educate the children as to the importance of having a healthy, balanced breakfast, but what they choose to eat is entirely up to them.
 
-        section
+        section#things-to-do
           h2 Things to do
           img.content__image.content__image--float(src=assetUrl('images/photos/2017-08-28_11-07-00.jpg'))
           p Even though Breakfast Club is shorter than our #[a(href=pageUrl('clubs/after-school-club.pug')) After School Club], there’s still plenty of fun to be had. We don’t run specifically scheduled activities, but we provide various toys, games and equipment for the children to indulge in #[a(href=pageUrl('blog/benefits-of-free-play.pug')) free-play]. This helps stimulate creativity and independence, as they’re able to take charge of how they spend their hour before school.
@@ -38,7 +71,7 @@ block content
             li Outdoor play
           p Everyone helps tidy up at 08:20, and then we walk in groups to Brunel Fields and Sefton Park, arriving in plenty of time before school begins.
 
-        section
+        section#sessions-prices
           h2 Sessions & prices
           table
             thead
@@ -51,7 +84,7 @@ block content
                 td £5.00
           a.content__cta(href='mailto:coopsparks@gmail.com?subject=Breakfast Club booking') Make a booking
 
-        section
+        section#register
           h2 Register with us
           p At Breakfast Club, we welcome children from Sefton Park and Brunel Field schools.
           a.content__button(href=pageUrl('about/registration-booking.pug')) Register now

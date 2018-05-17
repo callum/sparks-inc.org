@@ -1,0 +1,28 @@
+.callout {
+  margin-bottom: 2em;
+}
+
+.callout__image {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  float: left;
+  margin: 0 1.5em 1.5em 0;
+}
+
+.callout__body {
+  @include body;
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+
+  @include bp-min-small {
+    font-size: 22px;
+  }
+
+  @include bp-min-medium {
+    font-size: 26px;
+  }
+}
