@@ -24,7 +24,7 @@
 .page-nav__items {
   @include unstyled-list;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   border-bottom: 3px solid #eee;
 }
 

@@ -23,7 +23,8 @@ msmith.ignore([
   'includes/**/*',
   'layouts/**/*',
   'mixins/**/*',
-  '**/.*'
+  '**/.*',
+  '**/_*.pug'
 ])
 
 msmith.use(config(process.env.NODE_ENV, watchmode))
