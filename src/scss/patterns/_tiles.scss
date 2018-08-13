@@ -1,8 +1,24 @@
 @mixin tiles {
   @include bp-min-small {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    @supports (not (display: grid)) and (not (grid-gap: 3em)) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @supports (display: grid) and (grid-gap: 3em) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 3em;
+      margin: 3em 0;
+      justify-items: center;
+    }
+  }
+
+  @include bp-min-medium {
+    @supports (display: grid) and (grid-gap: 3em) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 }
 
@@ -16,12 +32,16 @@
   }
 
   @include bp-min-small {
-    width: 50%;
-    padding: 20px;
+    @supports (not (display: grid)) and (not (grid-gap: 3em)) {
+      width: 50%;
+      padding: 20px;
+    }
   }
 
   @include bp-min-medium {
-    width: 33.33%;
+    @supports (not (display: grid)) and (not (grid-gap: 3em)) {
+      width: 33.33%;
+    }
   }
 }
 

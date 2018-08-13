@@ -13,33 +13,43 @@ block body
         p Our team at Sparks is made up of a very passionate group of people from all walks of life that have come together with an understanding that being able to play and have fun is essential to our lives. We’re here to make sure your children’s time at Sparks is all-round the best it can be.
         p We’re always on the lookout for new faces to join the Sparks Family. If you have an interest in working with children, whether you have the relevant experience or not, please get in touch with us.
 
-      div.team
-        //- management
-        +team-member('Carole Theyer', 'CEO, Company Secretary & Director', '2016-01-18_11-25-13_007.jpg')
-        +team-member('Liam Jefferies', 'General Manager & Director', '2016-01-18_11-40-56_008.jpg')
-        +team-member('Alberto Del Favero', 'Deputy Manager Breakfast Club and Senior Playworker at Fairlawn', '2016-03-04_08-31-39_001.jpg')
-        +team-member('Hannah Moylan', 'Deputy Manager Sefton Park', '2016-10-12_11-52-12_001.jpg')
-        +team-member('Emily Dalton', 'Deputy Manager Dolphin and Business Administrator', '2016-08-13_19-55-36_024.jpg')
-        +team-member('Marie Edwards', 'Deputy Manager Fairlawn', '2015-09-23_17-59-59_012.jpg')
-        +team-member('Vivienne Simpson', 'Manager Big Sparks at Church Hall', '2016-09-15_18-17-56_013.jpg')
-        //- senior playworkers
-        +team-member('Chloe Blackman', 'Senior Playworker', '2015-09-24_13-43-07_002.jpg')
-        //- trainee senior playworkers
-        +team-member('Caitlin Wilson', 'Trainee Senior Playworker', '2016-01-23_11-13-51_001.jpg')
-        +team-member('Lily Meuross', 'Trainee Senior Playworker', '2016-09-15_18-17-08_023.jpg')
-        //- playworkers
-        +team-member('Arran Preston', 'Playworker', '2016-09-05_14-10-51_021.jpg')
-        +team-member('Galatea Scotti', 'Playworker', '2016-09-15_18-16-27_004.jpg')
-        +team-member('Nathalie Gibbs', 'Playworker', '')
-        +team-member('Sam Grayson', 'Playworker', '')
-        +team-member('Sophie Willoughby', 'Playworker', '2016-04-20_16-46-41_003.jpg')
-        //- juniour playworkers
-        +team-member('Cheyenne James', 'Junior Playworker', '2015-04-24_16-28-14_003.jpg')
-        +team-member('Isabel Everington', 'Junior Playworker', '2016-01-23_15-05-50_005.jpg')
-        +team-member('Mya Cartmel', 'Junior Playworker', '2016-01-23_13-36-12_008.jpg')
-        +team-member('Rudy Jewels', 'Junior Playworker', '2015-09-23_18-03-25_009.jpg')
-        +team-member('Milo Bott', 'Junior Playworker', '')
-        +team-member('Ren Gibbs', 'Junior Playworker', '')
-        //- extras
-        +team-member('John Summerhill', 'Finance Administrator', '')
-        +team-member('Callum Jefferies', 'Graphic & Web Designer', '2015-04-22_16-17-36_002.jpg')
+      section.team
+        h2.team__heading
+          span In the office
+        div.team__member-list
+          +team-member('Carole Theyer', 'CEO, Company Secretary & Director', 'carole-theyer.jpg')
+          +team-member('Liam Jefferies', 'General Manager & Director', 'liam-jefferies.jpg')
+          +team-member('Emily Dalton', 'Manager & Business Administrator', 'emily-dalton.jpg')
+          +team-member('Ian Holder', 'Inclusion & Sparkan Foragers Lead', 'ian-holder.jpg')
+        
+      section.team
+        h2.team__heading
+          span Sparks @ St Bart’s
+        div.team__member-list
+          +team-member('Liam Jefferies', 'Manager', 'liam-jefferies.jpg')
+          +team-member('Hannah Moylan', 'Deputy Manager', 'hannah-moylan.jpg')
+          +team-member('Phoebe Flint', 'Deputy Manager', 'phoebe-flint.jpg')
+          +team-member('Sam Grayson', 'Playworker', 'sam-grayson.jpg')
+        
+      section.team
+        h2.team__heading
+          span Sparks @ Dolphin
+        div.team__member-list
+          +team-member('Emily Dalton', 'Manager', 'emily-dalton.jpg')
+          +team-member('Eleanor Sharp', 'Playworker', 'eleanor-sharp.jpg')
+          +team-member('Sarah ‘Floss’ Turner', 'Playworker', 'sarah-turner.jpg')
+        
+      section.team
+        h2.team__heading
+          span Sparks @ Fairlawn
+        div.team__member-list
+          +team-member('Doreen Campbell', 'Playworker', 'doreen-campbell.jpg')
+        
+      section.team
+        h2.team__heading
+          span Breakfast Club
+        div.team__member-list
+          +team-member('Sophie Willoughby', 'Deputy Manager', 'sophie-willoughby.jpg')
+          +team-member('Hannah Moylan', 'Senior Playworker', 'hannah-moylan.jpg')
+          +team-member('Phoebe Flint', 'Senior Playworker', 'phoebe-flint.jpg')
+          +team-member('Doreen Campbell', 'Playworker', 'doreen-campbell.jpg')
