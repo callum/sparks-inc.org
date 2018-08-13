@@ -1,0 +1,58 @@
+---
+title: After School Club @ Fairlawn
+---
+
+extends ../../layouts/index
+
+block content
+  main.main
+    div.intro.intro--video.intro--background(style=backgroundImageStyle('images/photos/2015-06-03_16-57-00.jpg'))
+      div.intro__container
+        div.intro__primary
+          h1.intro__heading After School Club @ Fairlawn
+          p.intro__body After School Club @ Fairlawn is for children aged 4-11 attending Fairlawn and St Barnabas Schools. It’s the perfect way for the children to blow away those classroom cobwebs, socialise and relax after each school day.
+        div.intro__secondary
+          div.intro__video
+            div.intro__video-container
+              iframe(src='https://www.youtube.com/embed/3LRwW_OMBSk?rel=0')
+
+    include ./_nav
+    
+    div.main__container
+      div.content
+        section
+          blockquote
+            div.callout
+              img(src=assetUrl('images/team/2015-09-23_17-59-59_012.jpg')).callout__image
+              p.callout__body “Hello, I’m Marie, and I run Fairlawn After School Club.
+            p “I enjoy working with children, they give special insight and simplicity to a complicated world. I never know from one day to the next how the session will go which keeps me on my toes! 
+            p “We have the use of a large classroom exclusively for Sparks which we decorate and personalise. The children love to get creative and put the Sparks stamp on our room, adorning the walls with beautiful and colourful displays.
+            p “There’s always planned cooking and crafting activities that the children can choose to take part in. The arts and crafts table is always popular where they can make and invent colourful creations.  
+            p “We encourage the children to free play as much as possible and we provide lots of toys and games to spark their imaginations. Small world toys such as Lego and dinosaurs are always popular. Den building is a fantastic way for them to immerse themselves in their own make believe world. 
+            p “There’s also a large playground with a climbing frame that the children can explore and run around to blow off steam or play ball games after school. We try to offer a variety of activities each day and the playworkers have a range of differing skills to bring to After School Club.”
+          
+        section#what-to-expect
+          h2 What to expect
+          img.content__image.content__image--float(src=assetUrl('images/photos/2017-08-28_11-25-00.jpg'))
+          p The teaching staff at Fairlawn bring the children from their classes at Fairlawn and the children from St Barnabas are collected by Sparks staff.
+          p Upon arrival, everyone is offered a yummy, scrummy healthy snack, with a menu consisting of: toast, crumpets, wraps, rice cakes, cheese and crackers, and a selection of fruit and veg. Juice and water is also available throughout the session.
+          p
+            em Let us know about any dietary requirements and we will be happy to accommodate them. #[a(href=pageUrl('about/register.pug')) Visit our Registration page for more information].
+          p After snack time, everyone is free to play or chill out until tidy up time at 17:30. All children must then be picked up by 18:00.
+
+        section#things-to-do
+          include ./_things-to-do
+          p Some other activities on offer include: 
+          ul
+            li Den building
+            li Fancy dress
+            li Sewing
+            li Nature walks
+            li Outdoor play: scootering, tennis, football
+            li Toys & board games
+            li Trips to St Andrews Park and Narroways
+            li Computers 
+            li Television - a choice of films to end the day
+
+        include ./_what-to-bring
+        include ./_sessions-prices
