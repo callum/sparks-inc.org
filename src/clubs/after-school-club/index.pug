@@ -10,28 +10,33 @@ block content
       div.intro__container
         div.intro__primary
           h1.intro__heading After School Club
-          p.intro__body Our most popular and loved club, where children come to relax, play and blow away those classroom cobwebs after a busy day at school. 
+          p.intro__body Our most popular and loved clubs, where children come to relax, play and blow away those classroom cobwebs after a busy day at school. 
         div.intro__secondary
           div.intro__badge
             div.intro__badge-wrap
               img.intro__badge-image(src=assetUrl('images/dragon.png'))
 
     div.main__container
-      div.content
-        section
-          //- p We run after school clubs across four locations:
-          //- ul
-          //-   li #[strong Sefton Park School] – for children aged 3–7 attending Sefton Park or Brunel Field primary schools
-          //-   li #[strong St Bart’s Church Hall] – for children aged 8–11 attending Sefton Park or Brunel Field
-          //-   li #[strong Fairlawn School] – for children aged 4–11 attending Fairlawn and St Barnabas schools
-          //-   li #[strong Dolphin School] - for children aged 4-11 attending Dolphin School
-
-          ul
-            li
-              a(href=pageUrl('clubs/after-school-club/little-sparks.pug')) Little Sparks @ Terrapin
-            li
-              a(href=pageUrl('clubs/after-school-club/big-sparks.pug')) Big Sparks @ St Bart’s
-            li
-              a(href=pageUrl('clubs/after-school-club/fairlawn.pug')) After School Club @ Fairlawn
-            li
-              a(href=pageUrl('clubs/after-school-club/dolphin.pug')) After School Club @ Dolphin
+      section.clubs
+        ul.clubs__list
+          li.clubs__club
+            a.clubs__anchor(href=pageUrl('clubs/after-school-club/st-barts.pug'))
+              img.clubs__photo(src=assetUrl('images/photos/2014-03-19_17-11-13.jpg'))
+              h2.clubs__name Sparks @ St Bart’s
+              p.clubs__description For children aged 3-11 attending Sefton Park or Brunel Fields schools
+              p.clubs__info Learn more
+              p.clubs__price Sessions from £11.00
+          li.clubs__club
+            a.clubs__anchor(href=pageUrl('clubs/after-school-club/fairlawn.pug'))
+              img.clubs__photo(src=assetUrl('images/photos/2017-08-20_11-45-02.jpg'))
+              h2.clubs__name Sparks @ Fairlawn
+              p.clubs__description For children aged 4-11 attending Fairlawn and St Barnabas Schools
+              p.clubs__info Learn more
+              p.clubs__price Sessions from £11.00
+          li.clubs__club
+            a.clubs__anchor(href=pageUrl('clubs/after-school-club/dolphin.pug'))
+              img.clubs__photo(src=assetUrl('images/photos/2017-08-20_11-45-01.jpg'))
+              h2.clubs__name Sparks @ Dolphin
+              p.clubs__description For children aged 4-11 attending Dolphin School
+              p.clubs__info Learn more
+              p.clubs__price Sessions from £11.00

@@ -28,6 +28,15 @@
   max-width: 240px;
 }
 
+.clubs__photo {
+  @include tiles__image;
+  margin-bottom: .6em;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
 .clubs__name {
   @include tiles__heading;
   margin-top: 0;
