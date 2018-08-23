@@ -3,6 +3,7 @@ title: Sparks @ Dolphin
 ---
 
 extends ../../layouts/index
+include ../../mixins/location
 
 block content
   main.main
@@ -17,19 +18,19 @@ block content
               iframe(src='https://www.youtube.com/embed/ZZpOp0PFI_I?rel=0')
 
     include ./_nav
-    
+
     div.main__container
       div.content
         section
           blockquote
             div.callout
               img(src=assetUrl('images/team/emily-dalton.jpg')).callout__image
-              p.callout__body “Hi I’m Emily, and I run Dolphin After School Club. 
+              p.callout__body “Hi I’m Emily, and I run Dolphin After School Club.
             p “I love working with children because they have such an infectious sense of fun! Building positive relationships with them is my number one priority at work. I like to make them feel supported and encouraged to do what they love doing and help them develop into happy, kind people as they grow up.
-            p “The children at Dolphin absolutely love to be creative and get messy, and they’re also very active! We’re always playing football, building dens, making slime and so much more! 
-            p “We organise set activities for each session but encourage the children to #[a(href=pageUrl('blog/benefits-of-free-play.pug')) free play] and use their imaginations as much as possible. I’m always on my toes not knowing what activity the children will end up doing. It’s often spontaneous and always heaps of fun. Sometimes we play music, and before I know it everyone is on their feet dancing. On other days, someone might suggest ‘dressing up’ and by the end of the session everyone will be immersed in a make believe world and adorned with face paint! 
+            p “The children at Dolphin absolutely love to be creative and get messy, and they’re also very active! We’re always playing football, building dens, making slime and so much more!
+            p “We organise set activities for each session but encourage the children to #[a(href=pageUrl('blog/benefits-of-free-play.pug')) free play] and use their imaginations as much as possible. I’m always on my toes not knowing what activity the children will end up doing. It’s often spontaneous and always heaps of fun. Sometimes we play music, and before I know it everyone is on their feet dancing. On other days, someone might suggest ‘dressing up’ and by the end of the session everyone will be immersed in a make believe world and adorned with face paint!
             p “Some of the children prefer to play quietly or read on their own and to each other, which is brilliant to see. We encourage children to do what they want and let their imaginations run wild because our philosophy is that there is no better way to learn than through playing!”
-          
+
         section#what-to-expect
           h2 What to expect
           img.content__image.content__image--float(src=assetUrl('images/photos/2017-08-28_11-25-00.jpg'))
@@ -41,7 +42,7 @@ block content
 
         section#things-to-do
           include ./_things-to-do
-          p Some other activities on offer include: 
+          p Some other activities on offer include:
           ul
             li Den building
             li Fancy dress
@@ -50,8 +51,12 @@ block content
             li Outdoor play: scootering, tennis, football
             li Toys & board games
             li Trips to St Andrews Park and Narroways
-            li Computers 
+            li Computers
             li Television - a choice of films to end the day
 
         include ./_what-to-bring
         include ./_sessions-prices
+
+        section#contact
+          h2 Contact us
+          +location(locations.dolphin)

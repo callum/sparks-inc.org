@@ -4,6 +4,7 @@ description: Our increasingly popular Breakfast Club helps ease the early mornin
 ---
 
 extends ../layouts/index
+include ../mixins/location
 
 block content
   div.intro.intro--video.intro--background(style=backgroundImageStyle('images/photos/2016-01-12_15-45-45.jpg'))
@@ -15,7 +16,7 @@ block content
         div.intro__video
           div.intro__video-container
             iframe(src='https://www.youtube.com/embed/GRDu0i2MMk4?rel=0')
-              
+
   nav.page-nav
     div.page-nav__container
       ul.page-nav__items
@@ -27,23 +28,23 @@ block content
           a(href='#sessions-prices').page-nav__link Sessions & prices
         li.page-nav__item
           a(href='#register').page-nav__link Register with us
-          
+
   main.main
     div.main__container
       div.content
         section
           blockquote
             div.callout
-              img(src=assetUrl('images/team/2016-01-18_11-25-13_007.jpg')).callout__image
+              img(src=assetUrl('images/team/ian-holder.jpg')).callout__image
               p.callout__body “I’m Ian, and I run Breakfast Club @ Sparks.
-            p “I love working with Children because they’re so incredibly full of fun and energy, even first thing in the morning! I enjoy being up bright and early and making sure the children have had a hearty breakfast, and give them the opportunity to get messy, creative or just make noise! 
+            p “I love working with Children because they’re so incredibly full of fun and energy, even first thing in the morning! I enjoy being up bright and early and making sure the children have had a hearty breakfast, and give them the opportunity to get messy, creative or just make noise!
             p “I particularly enjoy working outdoors, being in nature and giving the children lots of freedom and choices.
-            p “The Scout Hut is the perfect base for Breakfast Club as it has loads of space for the children to run around and play inside and out. Our crafting table is also very popular with many children opting to start the day by expressing themselves creatively. 
-            p “The children love choosing their own breakfasts. We always have a variety of items on offer, including seasonal breakfast treats like pancakes on Pancake Day and hot cross buns leading up to Easter! The children really enjoy being able to choose their own activities too, and often make up new and original games or twists on the ones we already know. 
+            p “The Scout Hut is the perfect base for Breakfast Club as it has loads of space for the children to run around and play inside and out. Our crafting table is also very popular with many children opting to start the day by expressing themselves creatively.
+            p “The children love choosing their own breakfasts. We always have a variety of items on offer, including seasonal breakfast treats like pancakes on Pancake Day and hot cross buns leading up to Easter! The children really enjoy being able to choose their own activities too, and often make up new and original games or twists on the ones we already know.
             p “One of the things I love most about Breakfast Club is seeing the children come together to work towards a common goal. They all play together regardless of age and which school they’re from so it’s wonderful to see friendships blossom between children who otherwise may not have ever met if it weren’t for Sparks.”
 
-          p Here’s what some of the children told us they like most about Sparks Breakfast Club in their own words. 
-          
+          p Here’s what some of the children told us they like most about Sparks Breakfast Club in their own words.
+
           p #[q Space for hanging out on our own without parents or teachers!] – Polly aged 10
           p #[q Playing with my friend before school] – Ellie aged 4
           p #[q Fruit loaf!] – Martha aged 6
@@ -60,13 +61,13 @@ block content
           h2 Things to do
           img.content__image.content__image--float(src=assetUrl('images/photos/2017-08-28_11-07-00.jpg'))
           p Even though Breakfast Club is shorter than our #[a(href=pageUrl('clubs/after-school-club/index.pug')) After School Club], there’s still plenty of fun to be had. We don’t run specifically scheduled activities, but we provide various toys, games and equipment for the children to indulge in #[a(href=pageUrl('blog/benefits-of-free-play.pug')) free-play]. This helps stimulate creativity and independence, as they’re able to take charge of how they spend their hour before school.
-          p Breakfast Club is held at #[a(href=pageUrl('clubs/index.pug') + '#locations') The Scout Hut] next to Sefton Park Primary School, which provides quiet areas for reading or drawing, as well as space to run around and let off steam before school begins. 
-          p After tucking into brekkie, the children are free to get involved with: 
+          p Breakfast Club is held at #[a(href=pageUrl('clubs/index.pug') + '#locations') The Scout Hut] next to Sefton Park Primary School, which provides quiet areas for reading or drawing, as well as space to run around and let off steam before school begins.
+          p After tucking into brekkie, the children are free to get involved with:
           ul
             li Art activities
-            li Junk modelling 
-            li Quiet reading 
-            li Board games 
+            li Junk modelling
+            li Quiet reading
+            li Board games
             li Sports equipment
             li Outdoor play
           p Everyone helps tidy up at 08:20, and then we walk in groups to Brunel Fields and Sefton Park, arriving in plenty of time before school begins.
@@ -88,3 +89,7 @@ block content
           h2 Register with us
           p At Breakfast Club, we welcome children from Sefton Park and Brunel Field schools.
           a.content__button(href=pageUrl('about/registration-booking.pug')) Register now
+
+        section#contact
+          h2 Contact us
+          +location(locations.stBartsHall)

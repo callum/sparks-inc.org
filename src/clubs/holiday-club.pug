@@ -3,6 +3,7 @@ title: Holiday Club
 ---
 
 extends ../layouts/index
+include ../mixins/location
 
 block content
   main.main
@@ -21,7 +22,7 @@ block content
         section
           img.content__image.content__image--float(src=assetUrl('images/photos/2017-03-08_21-41-00.jpg'))
           p Each week, Holiday Club and Taningua club have a different theme so new experiences can be had – such as Bollywood, Vintage Sports, Circus Skills, and Japanese Pop Culture.
-          
+
         section
           h2 Our ethos
           p At Sparks, we believe the school holidays should be about meeting new people, learning new skills, being active and, most importantly,  having bundles of fun!
@@ -29,7 +30,7 @@ block content
 
         section
           h2 Where, when and who
-          p Holiday Club takes place during February and October half terms, Easter and summer school holidays, and as of Summer 2018, is held at #[a(href=map.fairlawn) Fairlawn School, Fairlawn Road, Bristol, BS6 5JL]. Please note we are closed during the May and Christmas holidays.
+          p Holiday Club takes place during February and October half terms, Easter and summer school holidays, and as of Summer 2018, is held at #[a(href=locations.fairlawn.map) Fairlawn School, Fairlawn Road, Bristol, BS6 5JL]. Please note we are closed during the May and Christmas holidays.
           p We welcome children from East and Central Bristol, and provide a great environment for making new friends.
 
         section
@@ -121,3 +122,7 @@ block content
           h2 Register with us
           p Booking opens for the Easter Holiday Club on the 2nd of March 2018.
           a.content__button(href=pageUrl('about/registration-booking.pug#registration')) Register now
+
+        section#contact
+          h2 Contact us
+          +location(locations.stBartsHall)

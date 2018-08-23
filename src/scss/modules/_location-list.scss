@@ -1,0 +1,16 @@
+.location-list {
+  @include unstyled-list;
+  margin-top: 2em;
+
+  @include bp-min-medium {
+    margin-top: 3em;
+  }
+}
+
+.location-list__item {
+  & + & {
+    margin-top: 1.5em;
+    padding-top: 1.5em;
+    border-top: 1px solid #eee;
+  }
+}

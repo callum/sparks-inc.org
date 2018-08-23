@@ -3,6 +3,7 @@ title: Taningua Club
 ---
 
 extends ../layouts/index
+include ../mixins/location
 
 block content
   main.main
@@ -23,9 +24,9 @@ block content
           img.content__image.content__image--float(src=assetUrl('images/photos/2017-06-14_21-10-00.jpg'))
           p One of the things parents and children love about our clubs is that there’s always plenty of equipment and activities to entertain everyone! At Sparks, we promote a culture of inclusion and it’s great to see children of varying ages and abilities getting together, interacting with one another and enjoying activities as a group.
           p However, we believe in giving children the #[a(href=pageUrl('blog/benefits-of-free-play.pug')) freedom to choose how they play] and spend their leisure time, so Taningua provides an alternative environment that is especially designed for bigger Sparks.
-          p Away from the little ones, the older children are free to explore more challenging activities, sophisticated cooking classes and more intricate crafting tasks. Day trips are also a little more adventurous, from climbing the rigging of the SS Great Britain to ceramic painting at #[a(href='http://www.flyingsaucers.co.uk/') Flying Saucers] pottery cafe. 
+          p Away from the little ones, the older children are free to explore more challenging activities, sophisticated cooking classes and more intricate crafting tasks. Day trips are also a little more adventurous, from climbing the rigging of the SS Great Britain to ceramic painting at #[a(href='http://www.flyingsaucers.co.uk/') Flying Saucers] pottery cafe.
           p In 2012, we asked the children to come up with a name for this exciting new club, and Taningua was settled upon because it means ‘Teenager’ in Icelandic. An ice cool name for an ice cool club.
-          
+
         section
           h2 What we get up to
           p Previous Taningua activities have included:
@@ -88,3 +89,7 @@ block content
             li Medication*
           p
             em *We must have written permission from a parent or guardian to supply medication.
+
+        section#contact
+          h2 Contact us
+          +location(locations.stBartsHall)

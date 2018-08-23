@@ -3,6 +3,7 @@ title: Sparkan Foragers
 ---
 
 extends ../layouts/index
+include ../mixins/location
 
 block content
   main.main
@@ -27,7 +28,7 @@ block content
         section
           h2 How to attend
           p Sparkan Foragers has been running since 2012 and is hugely popular with all participants. Chloe is our qualified level three Forest School teacher, and she runs weekly sessions as part of our After School Club during the warmer months from March to October.
-          
+
         section
           h2 What our Foragers get up to
           ul
@@ -50,7 +51,7 @@ block content
             li Medication*
           p
             em *We must have written permission from a parent or guardian to supply medication.
-            
+
         section
           h2 Sessions & prices
           p Sparken Foragers runs March-October as part of our #[a(href=pageUrl('clubs/after-school-club/index.pug')) Bristol After School Clubs]. Visit our #[a(href=pageUrl('about/registration-booking.pug')) bookings page] to find out how to register and book.
@@ -65,3 +66,7 @@ block content
                 td £#{increaseCost(11.00, 2)}
           p
             em Children must be picked up from Sparks by 18:00 at the very latest to avoid a fee.
+
+        section#contact
+          h2 Contact us
+          +location(locations.stBartsHall)

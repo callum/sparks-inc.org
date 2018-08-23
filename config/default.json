@@ -11,12 +11,70 @@
   "youtube": {
     "site": "https://www.youtube.com/user/ctheyer90"
   },
-  "map": {
-    "office": "https://www.google.co.uk/maps/place/The+Coach+House,+2+Upper+York+St,+Bristol,+City+of+Bristol+BS2+8QN/@51.460815,-2.591085,17z",
-    "fairlawn": "https://www.google.co.uk/maps/place/Fairlawn+Primary+School/@51.469691,-2.5845357,17z",
-    "scoutHut": "https://www.google.co.uk/maps/place/Scout+Hut+6388/@51.4745963,-2.5832194,15z/data=!4m5!3m4!1s0x0:0x1d9f518efbb2ab3d!8m2!3d51.4745963!4d-2.5832194",
-    "stBartsHall": "https://www.google.co.uk/maps/place/St+Bart's+Church/@51.4745121,-2.7149128,11z/data=!4m8!1m2!2m1!1sSt+Bart%E2%80%99s+Church!3m4!1s0x48718e0543a0f2b3:0xc9493173b145addc!8m2!3d51.4728179!4d-2.5849781",
-    "dolphin": "https://www.google.co.uk/maps/place/The+Dolphin+School/@51.4664078,-2.5895192,15z/data=!4m5!3m4!1s0x0:0x68b9069d354669cf!8m2!3d51.4664078!4d-2.5895192"
+  "locations": {
+    "office": {
+      "label": "Office",
+      "address": [
+        "Sparks Co-operative Ltd",
+        "Unit 17",
+        "The Coach House",
+        "2 Upper York St",
+        "Bristol BS2 8QN"
+      ],
+      "phone": "0117 924 4439",
+      "email": "coopsparks@gmail.com",
+      "map": "https://www.google.co.uk/maps/place/The+Coach+House,+2+Upper+York+St,+Bristol,+City+of+Bristol+BS2+8QN/@51.460815,-2.591085,17z"
+    },
+    "fairlawn": {
+      "label": "Fairlawn School",
+      "alias": "Sparks @ Fairlawn",
+      "address": [
+        "Fairlawn School",
+        "Fairlawn Road",
+        "Montpelier",
+        "Bristol BS6 5JL"
+      ],
+      "phone": "0772 955 4343",
+      "email": "coopsparks@gmail.com",
+      "map": "https://www.google.co.uk/maps/place/Fairlawn+Primary+School/@51.469691,-2.5845357,17z"
+    },
+    "scoutHut": {
+      "label": "The Scout Hut",
+      "alias": "Breakfast Club",
+      "address": [
+        "Hut3688",
+        "St. Bartholomews Rd",
+        "Ashley Down",
+        "Bristol BS7 9BJ"
+      ],
+      "phone": "0772 955 4340",
+      "email": "coopsparks@gmail.com",
+      "map": "https://www.google.co.uk/maps/place/Scout+Hut+6388/@51.4745963,-2.5832194,15z/data=!4m5!3m4!1s0x0:0x1d9f518efbb2ab3d!8m2!3d51.4745963!4d-2.5832194"
+    },
+    "stBartsHall": {
+      "label": "St Bart’s Church Hall",
+      "alias": "Sparks @ St Bart’s",
+      "address": [
+        "St Bart’s Church",
+        "Maurice Rd",
+        "St Andrews",
+        "Bristol BS6 5BZ"
+      ],
+      "phone": "0771 424 6799",
+      "email": "coopsparks@gmail.com",
+      "map": "https://www.google.co.uk/maps/place/St+Bart's+Church/@51.4745121,-2.7149128,11z/data=!4m8!1m2!2m1!1sSt+Bart%E2%80%99s+Church!3m4!1s0x48718e0543a0f2b3:0xc9493173b145addc!8m2!3d51.4728179!4d-2.5849781"
+    },
+    "dolphin": {
+      "label": "The Dolphin School",
+      "alias": "Sparks @ Dolphin",
+      "address": [
+        "25a Bath Buildings",
+        "Bristol BS6 5PT"
+      ],
+      "phone": "0756 232 0784",
+      "email": "coopsparks@gmail.com",
+      "map": "https://www.google.co.uk/maps/place/The+Dolphin+School/@51.4664078,-2.5895192,15z/data=!4m5!3m4!1s0x0:0x68b9069d354669cf!8m2!3d51.4664078!4d-2.5895192"
+    }
   },
   "meta": {
     "title": "Sparks Play & Care",
