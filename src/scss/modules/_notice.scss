@@ -1,0 +1,14 @@
+.notice {
+  position: sticky;
+  top: 16px;
+  display: block;
+  max-width: 540px;
+  margin: auto;
+  padding: 15px;
+  padding-left: 20px;
+  font: 500 20px 'Roboto', sans-serif;
+  text-align: center;
+  color: map-get($colors, notice);
+  background-image: data-url('images/notice.svg');
+  background-size: 100% 100%;
+}
