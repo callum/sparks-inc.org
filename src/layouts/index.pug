@@ -8,8 +8,10 @@ html(lang='en')
     include ../includes/header
     block content
     include ../includes/footer
+    script(src=assetUrl('js/body-scroll-lock.min.js'))
     script.
       var nav = document.querySelector('.js-nav')
+      var navMain = document.querySelector('.js-nav-main')
       var navItems = nav.querySelectorAll('.js-nav-item')
 
       document.addEventListener('focus', function (event) {
@@ -32,8 +34,15 @@ html(lang='en')
         var target = event.target
 
         if (matches(target, '.js-nav-toggle')) {
-          nav.classList.toggle('is-open')
-          return
+          if (nav.classList.contains('is-open')) {
+            nav.classList.remove('is-open')
+            enableBodyScroll()
+            return
+          } else {
+            nav.classList.add('is-open')
+            disableBodyScroll()
+            return
+          }
         }
 
         var parent = closest(target, '.js-nav-item')
@@ -51,6 +60,34 @@ html(lang='en')
         for (var i = 0; i < navItems.length; i++) {
           navItems[i].classList.remove('is-open')
         }
+      }
+      
+      var minMediumBp = window.matchMedia('(min-width: 760px)')
+      
+      function disableBodyScroll () {
+        bodyScrollLock.disableBodyScroll(navMain)
+        
+        var handler = function (event) {
+          if (event.matches && nav.classList.contains('is-open')) {
+            minMediumBp.removeListener(handler)
+            enableBodyScroll()
+          }
+        }
+        
+        minMediumBp.addListener(handler)
+      }
+      
+      function enableBodyScroll () {
+        bodyScrollLock.enableBodyScroll(navMain)
+        
+        var handler = function (event) {
+          if (!event.matches && nav.classList.contains('is-open')) {
+            minMediumBp.removeListener(handler)
+            disableBodyScroll()
+          }
+        }
+        
+        minMediumBp.addListener(handler)
       }
 
       function closest (element, selector) {

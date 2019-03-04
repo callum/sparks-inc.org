@@ -10,6 +10,8 @@
       position: fixed;
       z-index: 1;
       bottom: 0;
+      display: flex;
+      flex-direction: column;
       background-color: map-get($colors, purple);
     }
   }
@@ -35,6 +37,11 @@
 
 .nav__main {
   @include bp-max-medium {
+    .nav.is-open & {
+      flex: 1;
+      overflow: auto;
+    }
+
     .nav:not(.is-open) & {
       @include visually-hidden;
     }
@@ -47,10 +54,10 @@
 
 .nav__container {
   @include container;
-  height: 100%;
 
   @include bp-min-medium {
     @include container--medium;
+    height: 100%;
   }
 
   @include bp-min-large {
