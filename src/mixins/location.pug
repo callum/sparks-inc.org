@@ -1,4 +1,4 @@
-mixin location (location, imagePath)
+mixin location (location, imagePath, phoneLimited=false)
   div.location
     h3.location__name=location.label
     div.location__info
@@ -13,6 +13,9 @@ mixin location (location, imagePath)
           div.location__label Phone
           div.location__value
             a(href=`tel:#{location.phone}`)=location.phone
+          if phoneLimited
+            div
+              em (Only available in operating hours)
         div.location__email
           div.location__label Email
           div.location__value
