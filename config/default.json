@@ -42,19 +42,6 @@
       "email": "sparksfairlawn@gmail.com",
       "map": "https://www.google.co.uk/maps/place/Fairlawn+Primary+School/@51.469691,-2.5845357,17z"
     },
-    "scoutHut": {
-      "label": "The Scout Hut",
-      "alias": "Breakfast Club",
-      "address": [
-        "Hut3688",
-        "St. Bartholomews Rd",
-        "Ashley Down",
-        "Bristol BS7 9BJ"
-      ],
-      "phone": "0772 955 4340",
-      "email": "coopsparks@gmail.com",
-      "map": "https://www.google.co.uk/maps/place/Scout+Hut+6388/@51.4745963,-2.5832194,15z/data=!4m5!3m4!1s0x0:0x1d9f518efbb2ab3d!8m2!3d51.4745963!4d-2.5832194"
-    },
     "dolphin": {
       "label": "The Dolphin School",
       "alias": "Sparks @ Dolphin",
