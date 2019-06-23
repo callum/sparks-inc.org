@@ -39,7 +39,7 @@
         "Bristol BS6 5JL"
       ],
       "phone": "0772 955 4343",
-      "email": "sparksfairlawn@gmail.com",
+      "email": "coopsparks@gmail.com",
       "map": "https://www.google.co.uk/maps/place/Fairlawn+Primary+School/@51.469691,-2.5845357,17z"
     },
     "dolphin": {
@@ -50,8 +50,21 @@
         "Bristol BS6 5PT"
       ],
       "phone": "0756 232 0784",
-      "email": "sparksfairlawn@gmail.com",
+      "email": "coopsparks@gmail.com",
       "map": "https://www.google.co.uk/maps/place/The+Dolphin+School/@51.4664078,-2.5895192,15z/data=!4m5!3m4!1s0x0:0x68b9069d354669cf!8m2!3d51.4664078!4d-2.5895192"
+    },
+    "charltonhayes": {
+      "label": "Charlton Hayes",
+      "alias": "Sparks @ Charlton Hayes",
+      "address": [
+        "Charlton Hayes Primary Academy",
+        "Borkley Street",
+        "Patchway",
+        "Bristol BS34 5DB"
+      ],
+      "phone": "0754 924 1968",
+      "email": "coopsparks@gmail.com",
+      "map": "https://www.google.com/maps/place/Charlton+Wood+Academy/@51.5270426,-2.580379,17z/data=!3m1!4b1!4m5!3m4!1s0x48719195a9ca0bf3:0xf6b2738198ec0456!8m2!3d51.5270426!4d-2.5781903"
     }
   },
   "meta": {
