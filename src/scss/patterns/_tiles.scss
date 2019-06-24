@@ -8,16 +8,10 @@
 
     @supports (display: grid) and (grid-gap: 3em) {
       display: grid;
-      grid-template-columns: 1fr 1fr;
       grid-gap: 3em;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       margin: 3em 0;
       justify-items: center;
-    }
-  }
-
-  @include bp-min-medium {
-    @supports (display: grid) and (grid-gap: 3em) {
-      grid-template-columns: 1fr 1fr 1fr;
     }
   }
 }
